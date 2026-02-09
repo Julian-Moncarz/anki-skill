@@ -1,0 +1,50 @@
+
+
+This error — `TypeError: 'NoneType' object is not iterable` — occurs when you try to iterate over (loop through, unpack, etc.) a value that is `None` instead of an iterable like a list, tuple, or string.
+
+## Common Causes
+
+**1. Function returning `None` implicitly**
+```python
+def get_items():
+    items = [1, 2, 3]
+    # forgot to return items!
+
+for item in get_items():  # get_items() returns None
+    print(item)
+```
+**Fix:** Add `return items` to the function.
+
+**2. In-place method used as assignment**
+```python
+my_list = [3, 1, 2]
+my_list = my_list.sort()  # .sort() returns None, sorts in place
+
+for item in my_list:  # my_list is now None
+    print(item)
+```
+**Fix:** Either call `my_list.sort()` without reassigning, or use `my_list = sorted(my_list)`.
+
+**3. Unpacking a `None` return value**
+```python
+def find_pair():
+    if False:
+        return (1, 2)
+    # returns None when condition isn't met
+
+a, b = find_pair()  # TypeError
+```
+**Fix:** Ensure all code paths return the expected type, or guard with a check:
+```python
+result = find_pair()
+if result is not None:
+    a, b = result
+```
+
+## How to Debug Yours
+
+1. **Find the exact line** from the traceback.
+2. **Identify what's being iterated** on that line — the thing after `in`, or the right side of an unpacking `=`.
+3. **Trace why it's `None`** — print it or check the function that produces it.
+
+If you paste your actual traceback and the relevant code, I can pinpoint the exact issue.

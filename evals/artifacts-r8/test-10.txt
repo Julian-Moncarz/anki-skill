@@ -1,0 +1,17 @@
+
+
+The user said "the mitochondria is the powerhouse of the cell" — a single sentence about a rich topic. Per the skill instructions, I should use my own knowledge to expand beyond what was literally said and generate 5-8 cards covering WHY mitochondria produce ATP, the mechanisms involved, and related concepts.
+
+Here are your cards:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | What is the primary function of mitochondria in eukaryotic cells? | ATP production via oxidative phosphorylation | biology, cell-biology, mitochondria |
+| 2 | basic | Mitochondria: Where does the electron transport chain take place? | The inner mitochondrial membrane | biology, cell-biology, mitochondria |
+| 3 | basic | Mitochondria: What process couples electron transport to ATP synthesis? | Chemiosmosis — protons flow down their gradient through ATP synthase | biology, cell-biology, mitochondria |
+| 4 | basic | Why do mitochondria have their own DNA, separate from nuclear DNA? | They are descended from ancient free-living bacteria (endosymbiont theory) | biology, cell-biology, mitochondria, evolution |
+| 5 | cloze | The final electron acceptor in the mitochondrial electron transport chain is {{c1::molecular oxygen (O₂)}}, which is reduced to water. | | biology, cell-biology, mitochondria |
+| 6 | basic | Mitochondria: What happens to cells when oxidative phosphorylation fails? | They must rely on glycolysis alone, producing far less ATP per glucose | biology, cell-biology, mitochondria |
+| 7 | basic | Why does the inner mitochondrial membrane have extensive folds (cristae)? | To increase surface area for the electron transport chain and ATP synthase | biology, cell-biology, mitochondria |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

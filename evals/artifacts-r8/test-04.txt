@@ -1,0 +1,25 @@
+
+
+Here are the CRISPR-Cas9 cards I've generated. I focused on mechanisms and "why/how" understanding rather than just terminology:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | CRISPR: What is the biological function of guide RNA (gRNA)? | Directs Cas9 to a specific DNA sequence by complementary base pairing | biology, crispr, mechanism |
+| 2 | basic | CRISPR: Why must a PAM sequence be adjacent to the target site? | Cas9 cannot unwind and interrogate DNA without first binding to PAM | biology, crispr, mechanism |
+| 3 | cloze | CRISPR: The PAM sequence for *S. pyogenes* Cas9 is {{c1::5'-NGG-3'}}, located on the {{c2::non-target}} strand. | | biology, crispr, notation |
+| 4 | basic | CRISPR: Which Cas9 nuclease domain cleaves the strand complementary to the gRNA? | HNH | biology, crispr, mechanism |
+| 5 | basic | CRISPR: Which Cas9 nuclease domain cleaves the non-complementary (PAM-containing) strand? | RuvC | biology, crispr, mechanism |
+| 6 | basic | CRISPR: What type of DNA break does wild-type Cas9 produce? | Blunt-ended double-strand break (DSB) | biology, crispr, mechanism |
+| 7 | basic | CRISPR: What happens when only one Cas9 nuclease domain is deactivated (nickase mutant)? | It cuts only one strand, creating a nick instead of a DSB | biology, crispr, application |
+| 8 | basic | CRISPR: Why is non-homologous end joining (NHEJ) considered error-prone? | It ligates broken ends directly, often introducing insertions or deletions (indels) | biology, crispr, dna-repair |
+| 9 | basic | CRISPR: What additional component does homology-directed repair (HDR) require that NHEJ does not? | A donor DNA template with homologous sequences | biology, crispr, dna-repair |
+| 10 | basic | CRISPR: Why is gene knockout easier to achieve than precise gene insertion with CRISPR? | NHEJ (knockout) is the default repair pathway; HDR (insertion) requires a template and occurs at much lower frequency | biology, crispr, application |
+| 11 | basic | CRISPR: How does Cas9 search for its target among billions of base pairs? | It scans for PAM sequences first, then probes adjacent DNA for gRNA complementarity — rejecting mismatches quickly | biology, crispr, mechanism |
+| 12 | basic | CRISPR: What is the original biological role of CRISPR-Cas systems in bacteria? | Adaptive immune defense against bacteriophages (viral DNA) | biology, crispr, reasoning |
+| 13 | basic | CRISPR: Why does the gRNA include a scaffold (tracrRNA) region in addition to the targeting sequence? | The scaffold binds and stabilizes the Cas9 protein in its active conformation | biology, crispr, mechanism |
+| 14 | cloze | CRISPR: The targeting portion of the gRNA is typically {{c1::~20}} nucleotides long. | | biology, crispr, notation |
+| 15 | basic | CRISPR: What is the main risk of off-target effects in CRISPR editing? | Cas9 may cut genomic sites that partially match the gRNA, causing unintended mutations | biology, crispr, reasoning |
+| 16 | basic | CRISPR: Why does HDR primarily occur in dividing cells but not in post-mitotic cells? | HDR relies on cell-cycle-dependent homologous recombination machinery active in S/G2 phase | biology, crispr, dna-repair |
+| 17 | basic | CRISPR: What is dCas9, and what makes it useful beyond gene cutting? | Catalytically dead Cas9 — both nuclease domains are deactivated, so it binds DNA without cutting, enabling gene regulation (CRISPRi/CRISPRa) | biology, crispr, application |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

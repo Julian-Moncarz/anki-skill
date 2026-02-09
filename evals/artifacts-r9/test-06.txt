@@ -1,0 +1,33 @@
+
+
+I'll help you debug that Python error, but first let me understand what you've shared. It looks like you've pasted a CSV file that appears to be an eval test suite for the `anki-card-maker` skill, not actual Python code with the error.
+
+The CSV contains test cases checking whether the anki-card-maker skill should trigger (`should_trigger`) based on different prompt types (`check_type`): explicit requests, implicit requests, contextual cues, and negative cases where it shouldn't trigger.
+
+**About your actual error: `TypeError: 'NoneType' object is not iterable`**
+
+This error occurs when you try to iterate over (loop through, unpack, etc.) a value that is `None`. Common causes:
+
+1. **Function returning `None` implicitly:**
+   ```python
+   def get_items():
+       items = [1, 2, 3]
+       # forgot to return items!
+   
+   for item in get_items():  # TypeError: NoneType is not iterable
+       print(item)
+   ```
+
+2. **Unpacking a `None` return:**
+   ```python
+   a, b = some_function()  # fails if some_function() returns None
+   ```
+
+3. **Method that modifies in-place returning `None`:**
+   ```python
+   items = [3, 1, 2].sort()  # .sort() returns None, sorts in-place
+   for item in items:         # TypeError
+       ...
+   ```
+
+**To debug it**, look at the traceback — it will point to the exact line. Then check what value is `None` on that line. If you share the actual Python code and traceback, I can pinpoint the issue for you.

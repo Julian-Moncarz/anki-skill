@@ -1,0 +1,42 @@
+{
+  "overall_pass": false,
+  "score": 72,
+  "violations": [
+    {
+      "rule": "Back brevity (under 10 words)",
+      "card": "1",
+      "detail": "Back is 'Partial derivatives (gradient) of the cost function with respect to each parameter' — 12 words. Should be trimmed, e.g., 'The gradient (partial derivatives of the cost function)'."
+    },
+    {
+      "rule": "Atomic / back tests one fact",
+      "card": "6",
+      "detail": "Back contains two facts joined by semicolon: 'SGD uses one random example; batch uses the entire dataset'. These are two independent facts. Split into separate cards or keep only the SGD fact (batch is deducible or already known)."
+    },
+    {
+      "rule": "Mirror-deducible card check",
+      "card": "4 and 5",
+      "detail": "Learning rate too large → overshoots/diverges and learning rate too small → slow convergence are a classic sacrifice/gain mirror pair. Knowing one strongly hints at the other (the two failure modes of a single continuous parameter). Consider merging into a single multi-cloze or keeping only the less intuitive one."
+    },
+    {
+      "rule": "No enumerations (including 2-item cloze lists)",
+      "card": "10",
+      "detail": "Back asks for two items: 'Local minima and saddle points'. This is a 2-item enumeration. Split into separate cards, e.g., one card per problematic point, or reframe to test one concept."
+    },
+    {
+      "rule": "Mirror-deducible card check / easily derived",
+      "card": "6 and 7",
+      "detail": "Cards 6, 7, and 8 form a variant triad (batch/SGD/mini-batch). Card 7's answer ('a small random subset') is trivially deducible once you know card 6's distinction (one example vs. entire dataset) — mini-batch is obviously in between. The SKILL.md explicitly flags this pattern: 'Variant triads: knowing any two gives you the third. Collapse into fewer cards that test the INTERESTING distinction.' Card 8 already tests the interesting distinction. Card 7 should be dropped."
+    },
+    {
+      "rule": "Cloze difficulty check",
+      "card": "3",
+      "detail": "The cloze 'θ = θ − {{c1::α}} · ∇J(θ), where {{c1}} is the learning rate' — the hint text 'where {{c1}} is the learning rate' directly gives away that the blank is the learning rate symbol. The surrounding context makes it guessable. Remove the hint clause or restructure."
+    },
+    {
+      "rule": "Type distribution (~40% why/how cards)",
+      "card": "general",
+      "detail": "Only cards 4, 5, 8, and 9 are why/how/reasoning cards (4 out of 10 = 40%). Cards 1, 2, 3, 6, 7, 10 are definitional or factual (60%). This is borderline — the ratio is acceptable at exactly 40%, but if cards 4+5 are merged (mirror pair) and card 7 is dropped, the remaining set would fall below the target. The set needs rebalancing after fixing other violations."
+    }
+  ],
+  "score_breakdown": "Started at 100. -4 for card 1 back brevity. -8 for card 6 atomicity violation. -6 for cards 4/5 mirror pair. -8 for card 10 enumeration. -6 for cards 6/7 variant triad redundancy. -4 for card 3 cloze guessability. -2 for type distribution risk after fixes."
+}

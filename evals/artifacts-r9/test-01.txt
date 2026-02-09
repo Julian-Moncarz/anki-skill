@@ -1,0 +1,20 @@
+
+
+I'll create Anki cards from the gradient descent content you learned. Let me identify the card-worthy concepts and generate high-quality cards.
+
+Here are the cards I've generated:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | Gradient descent: What does the algorithm compute to determine how to update parameters? | Partial derivatives (gradient) of the cost function with respect to each parameter | machine-learning, gradient-descent |
+| 2 | basic | Gradient descent: In which direction are parameters updated relative to the gradient? | The opposite direction | machine-learning, gradient-descent |
+| 3 | cloze | The gradient descent update rule is: θ = θ − {{c1::α}} · ∇J(θ), where {{c1}} is the learning rate. | | machine-learning, gradient-descent, formula |
+| 4 | basic | Gradient descent: What happens if the learning rate is too large? | The algorithm overshoots and may diverge | machine-learning, gradient-descent |
+| 5 | basic | Gradient descent: What happens if the learning rate is too small? | Convergence becomes very slow | machine-learning, gradient-descent |
+| 6 | basic | How does stochastic gradient descent (SGD) differ from batch gradient descent in what data it uses per update? | SGD uses one random example; batch uses the entire dataset | machine-learning, gradient-descent, sgd |
+| 7 | basic | Mini-batch SGD computes gradients over what kind of data subset? | A small random subset of the training data | machine-learning, gradient-descent, sgd |
+| 8 | basic | Why is SGD often preferred over batch gradient descent despite being noisier? | Faster per update and the noise helps escape shallow local minima | machine-learning, gradient-descent, sgd |
+| 9 | basic | Under what condition does gradient descent guarantee finding the global minimum? | When the cost function is convex | machine-learning, gradient-descent |
+| 10 | basic | Gradient descent: What two problematic points can the algorithm get stuck at for non-convex cost functions? | Local minima and saddle points | machine-learning, gradient-descent |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

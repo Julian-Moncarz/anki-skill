@@ -1,0 +1,19 @@
+
+
+Here are the cards I've generated from your CAP theorem content:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | CAP theorem: What does Consistency guarantee? | Every read receives the most recent write (or an error) | distributed-systems, cap-theorem |
+| 2 | basic | CAP theorem: What does Availability guarantee? | Every request receives a non-error response | distributed-systems, cap-theorem |
+| 3 | basic | CAP theorem: What does Partition Tolerance guarantee? | The system continues operating despite network partitions between nodes | distributed-systems, cap-theorem |
+| 4 | basic | CAP theorem: Why is the real choice between consistency and availability, not all three? | Network partitions are inevitable in distributed systems, so partition tolerance is mandatory | distributed-systems, cap-theorem |
+| 5 | basic | CAP theorem: How does a CP system behave during a network partition? | It refuses some requests to maintain consistency | distributed-systems, cap-theorem |
+| 6 | basic | CAP theorem: How does an AP system behave during a network partition? | It serves potentially stale data to remain available | distributed-systems, cap-theorem |
+| 7 | cloze | MongoDB (with majority write concern) is classified as a {{c1::CP}} system in the CAP theorem. | | distributed-systems, cap-theorem |
+| 8 | cloze | Cassandra is classified as a {{c1::AP}} system in the CAP theorem. | | distributed-systems, cap-theorem |
+| 9 | basic | CAP theorem: What is the common misconception about the "pick 2 of 3" tradeoff? | That you permanently give up one property — the tradeoff only applies during partitions | distributed-systems, cap-theorem, misconception |
+| 10 | basic | CAP theorem: What consistency model do AP systems typically offer? | Eventual consistency | distributed-systems, cap-theorem |
+| 11 | basic | What does eventual consistency guarantee? | If no new writes occur, all replicas converge to the same value over time | distributed-systems, cap-theorem |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

@@ -1,0 +1,25 @@
+
+
+I'll create Anki cards about stack vs heap memory allocation. Since you mentioned learning the difference, I'll expand with my own knowledge to cover the key concepts thoroughly.
+
+Here are the cards:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | Memory allocation: Where are local variables and function call frames stored? | The stack | memory-allocation, stack |
+| 2 | basic | Memory allocation: Where are dynamically allocated objects (e.g., via `malloc` or `new`) stored? | The heap | memory-allocation, heap |
+| 3 | basic | Stack memory: Why is allocation/deallocation so fast? | It only requires moving the stack pointer (push/pop) | memory-allocation, stack, performance |
+| 4 | basic | Heap memory: Why is allocation slower than stack allocation? | The allocator must search for a free block of sufficient size and manage fragmentation | memory-allocation, heap, performance |
+| 5 | basic | Memory allocation: Who manages the lifetime of stack-allocated variables? | The compiler (automatically freed when the function returns) | memory-allocation, stack |
+| 6 | basic | Memory allocation: Who is responsible for freeing heap-allocated memory in C/C++? | The programmer (manually, via `free`/`delete`) | memory-allocation, heap |
+| 7 | basic | What happens if a program allocates heap memory but never frees it? | A memory leak — the memory remains occupied until the process exits | memory-allocation, heap, bugs |
+| 8 | basic | What causes a stack overflow? | Exceeding the fixed stack size, typically from deep or infinite recursion | memory-allocation, stack, bugs |
+| 9 | cloze | Stack memory grows in a {{c1::LIFO (last-in, first-out)}} pattern because each function call pushes a frame and each return pops it. | | memory-allocation, stack |
+| 10 | basic | Why can't you return a pointer to a local variable from a function? | The local variable lives on the stack and is deallocated when the function returns, leaving a dangling pointer | memory-allocation, stack, bugs |
+| 11 | basic | Memory allocation: Why is the heap susceptible to fragmentation but the stack is not? | Stack allocations are always contiguous and freed in order; heap allocations are arbitrary-sized and freed in arbitrary order | memory-allocation, heap, fragmentation |
+| 12 | basic | Heap memory: What is the typical consequence of fragmentation over time? | Allocation failures or slowdowns despite sufficient total free memory | memory-allocation, heap, fragmentation |
+| 13 | cloze | The stack has a {{c1::fixed}} size set at program/thread start, while the heap can {{c2::grow}} dynamically up to available virtual memory. | | memory-allocation, stack, heap |
+| 14 | basic | Why is stack memory thread-safe by default? | Each thread gets its own stack, so no sharing occurs | memory-allocation, stack, concurrency |
+| 15 | basic | Why does heap memory require synchronization in multithreaded programs? | The heap is shared across threads, so concurrent allocations/frees can cause data races | memory-allocation, heap, concurrency |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

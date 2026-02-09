@@ -48,12 +48,17 @@ Not everything is worth a card. This is the hardest part — most bad decks fail
 - **Mirror-deducible cards:** if knowing card A trivially gives you card B, drop one or merge into multi-cloze. E.g., "public key encrypts" + "private key decrypts" — keep one or merge.
 - **Easily derived information:** if it follows logically from another card you already made, skip it.
 
-**Scaling to topic complexity, not input length:**
-A single sentence about a rich topic should still generate many cards — USE YOUR OWN KNOWLEDGE to expand beyond what the user literally said. If they say "mitochondria is the powerhouse of the cell," don't make 3 cards about ATP production. Instead, generate cards about WHY mitochondria produce ATP (electron transport chain, chemiosmosis), what goes wrong when they fail (mitochondrial disease), why they have their own DNA (endosymbiont theory), etc.
-- Simple concept (one mechanism): 5-8 cards
-- Medium concept (multiple interacting parts): 8-15 cards
-- Complex system (many components, relationships, edge cases): 15-25 cards
-Never rephrase the same fact multiple ways to hit a count. Every card must test a DIFFERENT piece of knowledge.
+**Make cards FROM the provided content only:**
+Cards should be based on what was actually taught or pasted — not on your general knowledge of the topic. If the user pastes an article about CRISPR that covers Cas9 but not Cas12, don't make cards about Cas12.
+
+Exception: if you believe something critically important is MISSING from the content, flag it to the user: "The content didn't cover X, which is important for understanding this topic — want me to add cards for that too?" Only add extra cards if they say yes.
+
+**Scaling:**
+Scale card count to the amount of card-worthy content provided:
+- Short explanation (1-2 key ideas): 3-5 cards
+- Medium explanation (several concepts): 8-15 cards
+- Long/detailed content (many concepts, relationships): 15-25 cards
+Never rephrase the same fact multiple ways to hit a count. Every card must test a DIFFERENT piece of knowledge from the source content. If the content only has 1-2 card-worthy facts, make 1-2 cards. Quality over quantity — a single excellent card beats three redundant ones.
 
 **Mirror-deducible card check (CRITICAL — do this before presenting):**
 Scan your card set. If knowing card A's answer trivially gives you card B's answer, you have a mirror pair. Drop one card or merge into a single multi-cloze.
@@ -89,14 +94,14 @@ The front must ask one thing. The back must be the SHORTEST correct answer — i
 
 Parenthetical abbreviations are OK: "Non-homologous end joining (NHEJ)", "Guide RNA (gRNA)", "Eric Brewer (2000)" — these are standard notation, not extra facts. But parentheticals that add a NEW fact are not OK: "ATP production (cellular energy generation)" adds a restatement that should be a separate card or removed.
 
-Common violations to watch for:
-- Front: "Who invented X and when?" → split into who and when
-- Front: "What does X sacrifice and when would you use it?" → two cards
-- Back: "It does A and B" → one card for A, one for B
-- Back: "X because (1) reason, (2) reason" → one card per reason
-- Back: "X (also known as Y)" → trim the parenthetical unless that's what the card tests
-- Back: "A — this means B" → the dash adds a second fact, remove it or make it a separate card
-- Back: "A, which enables B" → two facts, split
+Common violations to watch for — if ANY of these patterns appear in a back, it MUST be split or trimmed:
+- "A and B" → two facts joined by "and", split
+- "A — B" or "A – B" → dash-elaboration, second fact after the dash
+- "A, which B" or "A, where B" → relative clause adds a second fact
+- "A, introducing/causing/enabling B" → comma + participle adds a consequence
+- "A (B)" where B is NOT an abbreviation → parenthetical adds a new fact
+- "A because B" → back should be just A or just B, not both
+- "A; B" → semicolon joins two independent facts
 
 Bad: "What type of cryptography is RSA?" → "Asymmetric (public-key) cryptography — it uses a pair of keys: one public, one private."
 (Answers the question, then adds extra context after a dash)
@@ -186,6 +191,23 @@ Use descriptive tags:
 - Topic-level: `machine-learning`, `calculus`, `biology`
 - Subtopic: `backpropagation`, `derivatives`, `genetics`
 - Type tags when useful: `definition`, `formula`, `process`
+
+### Step 2.5: MANDATORY Self-Check (do this BEFORE presenting)
+
+After generating your cards, STOP and run these checks. Fix violations before showing the user.
+
+**Mirror scan:** Read every pair of cards. Ask: "If I know card A's answer, can I immediately deduce card B's answer?" Common mirror patterns:
+- Encrypt/decrypt: "public key encrypts" ↔ "private key decrypts" — same fact, two angles
+- Sacrifice/gain: "CP sacrifices availability" ↔ "AP sacrifices consistency" — same tradeoff
+- Variant triads: batch/SGD/mini-batch — knowing two gives you the third
+- Sign/verify: "sign with private" ↔ "verify with public" — trivially deducible
+Fix: merge into one multi-cloze, drop the deducible card, or reframe to test a non-obvious aspect.
+
+**Back scan:** Read every back. Does it contain "and", a dash, a semicolon, "which", or a comma followed by a verb? If yes, it probably has two facts — split it.
+
+**Cloze scan:** For each cloze, read the sentence with the blank. Can you guess the answer from the surrounding words alone without knowing the topic? If yes, remove the hint words or restructure.
+
+**Distribution count:** Count: how many cards are "what is X" definitions vs. "why/how" reasoning? If more than half are definitional, convert some to "why" or "what happens if" cards using the same facts.
 
 ### Step 3: Present for Approval
 

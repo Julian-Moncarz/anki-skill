@@ -1,0 +1,24 @@
+
+
+Here are the Anki cards I've generated on how gradient descent works:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | Optimization: What problem does gradient descent solve? | Finding parameter values that minimize a loss function | machine-learning, gradient-descent, optimization |
+| 2 | cloze | The gradient descent update rule is: θ = θ − {{c1::α}} · ∇J(θ), where {{c1}} is the learning rate. | | machine-learning, gradient-descent, formula |
+| 3 | basic | Gradient descent: Why does the update SUBTRACT the gradient rather than add it? | The gradient points in the direction of steepest ascent, so subtracting moves toward the minimum | machine-learning, gradient-descent, reasoning |
+| 4 | basic | Gradient descent: What happens if the learning rate is too large? | The optimizer overshoots the minimum and may diverge | machine-learning, gradient-descent, hyperparameters |
+| 5 | basic | Gradient descent: What happens if the learning rate is too small? | Convergence becomes extremely slow | machine-learning, gradient-descent, hyperparameters |
+| 6 | basic | Gradient descent: What does the gradient ∇J(θ) represent geometrically? | The direction of steepest increase of the loss function | machine-learning, gradient-descent, calculus |
+| 7 | basic | Why is SGD often preferred over batch gradient descent? | Faster per update, and noise helps escape shallow local minima | machine-learning, gradient-descent, sgd |
+| 8 | basic | Gradient descent: What does "batch" gradient descent compute the gradient over? | The entire training dataset | machine-learning, gradient-descent, variants |
+| 9 | basic | Gradient descent: What does mini-batch gradient descent compute the gradient over? | A random subset of training examples | machine-learning, gradient-descent, variants |
+| 10 | basic | Gradient descent: Why can it get stuck in non-convex loss landscapes? | It can converge to local minima or saddle points instead of the global minimum | machine-learning, gradient-descent, reasoning |
+| 11 | cloze | A loss function is {{c1::convex}} if any line segment between two points on its surface lies above or on the surface. | | machine-learning, gradient-descent, definition |
+| 12 | basic | Gradient descent: Why are saddle points a bigger problem than local minima in high-dimensional spaces? | Saddle points are exponentially more common than local minima as dimensionality increases | machine-learning, gradient-descent, reasoning |
+| 13 | basic | Gradient descent: What role does the partial derivative ∂J/∂θᵢ play? | It tells how much the loss changes when parameter θᵢ changes, giving that parameter's update direction | machine-learning, gradient-descent, calculus |
+| 14 | basic | Gradient descent: What is a learning rate schedule? | A strategy that changes the learning rate during training (e.g., decreasing it over time) | machine-learning, gradient-descent, hyperparameters |
+| 15 | basic | How does momentum improve basic gradient descent? | It accumulates a velocity from past gradients, smoothing updates and accelerating through flat regions | machine-learning, gradient-descent, optimization |
+| 16 | basic | Gradient descent: Why must the loss function be differentiable? | The algorithm requires computing gradients (partial derivatives) to determine the update direction | machine-learning, gradient-descent, reasoning |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

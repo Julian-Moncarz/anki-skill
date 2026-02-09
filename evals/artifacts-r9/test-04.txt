@@ -1,0 +1,21 @@
+
+
+Here are the cards I generated from the CRISPR passage:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | CRISPR: What natural function was the CRISPR-Cas9 system adapted from? | Bacterial immune defense against viruses | biology, crispr, genetics |
+| 2 | basic | CRISPR: How do bacteria store captured viral DNA fragments for future defense? | As spacers in CRISPR arrays | biology, crispr, genetics |
+| 3 | basic | CRISPR: What molecule guides Cas9 to the correct DNA target? | Guide RNA (gRNA) | biology, crispr, genetics |
+| 4 | basic | CRISPR: What does Cas9 do when it reaches its target DNA sequence? | Cuts both strands (double-strand break) | biology, crispr, genetics |
+| 5 | basic | CRISPR: How long is the synthetic guide RNA sequence used in genome editing? | ~20 nucleotides | biology, crispr, genetics |
+| 6 | basic | CRISPR: Why does NHEJ often disrupt a gene after Cas9 cuts it? | NHEJ is error-prone, introducing insertions/deletions during repair | biology, crispr, repair-mechanisms |
+| 7 | basic | CRISPR: What is required for HDR to insert a new sequence at the cut site? | A donor DNA template | biology, crispr, repair-mechanisms |
+| 8 | basic | CRISPR: When would you choose HDR over NHEJ as the repair pathway? | When you want to insert a specific new sequence rather than just disrupt the gene | biology, crispr, repair-mechanisms |
+| 9 | basic | CRISPR: What role does the PAM sequence play in Cas9 targeting? | Cas9 requires PAM adjacent to the target site to bind and cut | biology, crispr, genetics |
+| 10 | cloze | For S. pyogenes Cas9, the PAM sequence is {{c1::NGG}}. | | biology, crispr, genetics |
+| 11 | basic | CRISPR: How does a bacterium "remember" a virus it has previously encountered? | It stores fragments of the viral DNA as spacers, which are transcribed into gRNA upon reinfection | biology, crispr, genetics |
+
+**Type distribution:** ~45% why/how/reasoning (cards 6, 7, 8, 9, 11), ~36% core definitions/facts (cards 1, 2, 3, 4, 5), ~9% application (card 8), ~9% notation (card 10).
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

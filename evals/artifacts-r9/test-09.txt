@@ -1,0 +1,22 @@
+
+
+Here are the flashcards I've generated from your RSA notes:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | What type of cryptography is RSA? | Asymmetric (public-key) cryptography | cryptography, rsa |
+| 2 | basic | RSA key generation: What is the first step? | Choose two large primes p and q | cryptography, rsa, key-generation |
+| 3 | basic | RSA: How is the modulus n computed? | n = p × q | cryptography, rsa, key-generation, formula |
+| 4 | basic | RSA: How is Euler's totient φ(n) computed from the two primes? | φ(n) = (p−1)(q−1) | cryptography, rsa, key-generation, formula |
+| 5 | basic | RSA: What condition must the public exponent e satisfy relative to φ(n)? | gcd(e, φ(n)) = 1 | cryptography, rsa, key-generation |
+| 6 | basic | RSA: How is the private exponent d derived from e? | d = modular inverse of e mod φ(n) | cryptography, rsa, key-generation |
+| 7 | cloze | RSA: The public key is (n, {{c1::e}}) and the private key is (n, {{c2::d}}). | | cryptography, rsa |
+| 8 | basic | RSA encryption formula: How is ciphertext computed from a message? | ciphertext = message^e mod n | cryptography, rsa, formula |
+| 9 | basic | RSA decryption formula: How is the original message recovered? | message = ciphertext^d mod n | cryptography, rsa, formula |
+| 10 | basic | What mathematical problem makes RSA secure? | Factoring the large modulus n back into its prime factors p and q | cryptography, rsa, security |
+| 11 | basic | What is the minimum recommended key size for RSA today? | 2048 bits | cryptography, rsa, security |
+| 12 | basic | Why is RSA rarely used to encrypt data directly? | It's too slow for bulk data | cryptography, rsa, application |
+| 13 | basic | RSA: What is hybrid encryption? | RSA encrypts a symmetric session key, which encrypts the actual data | cryptography, rsa, application |
+| 14 | cloze | RSA digital signatures: sign with the {{c1::private}} key, verify with the {{c2::public}} key. | | cryptography, rsa, digital-signatures |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

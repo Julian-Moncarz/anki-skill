@@ -1,0 +1,42 @@
+{
+  "overall_pass": false,
+  "score": 68,
+  "violations": [
+    {
+      "rule": "Atomic (back brevity) — front asks two things",
+      "card": "7",
+      "detail": "Front asks 'How many steps does closing a connection require, AND what packets are used?' — this is two questions joined by 'and'. Should be split into two cards: one for the number of steps, one for the packet types used."
+    },
+    {
+      "rule": "Back brevity / atomicity",
+      "card": "3",
+      "detail": "Back is 'With a SYN-ACK: acknowledging the client's sequence number and providing its own' — this contains two facts joined by 'and' (acknowledging + providing). The back should be trimmed to just 'A SYN-ACK packet' with the two functions tested in separate cards if needed."
+    },
+    {
+      "rule": "Back brevity / atomicity",
+      "card": "5",
+      "detail": "Back is 'To reassemble packets in order and detect missing segments' — two distinct functions joined by 'and'. Should be split: one card for ordering, one for missing segment detection."
+    },
+    {
+      "rule": "Cloze difficulty check — guessable from context",
+      "card": "8",
+      "detail": "'After a TCP connection is established, {{c1::either side}} can initiate data transfer.' — 'either side' is highly guessable from context. There are only two options (client, server, or either), and the phrasing strongly hints at the answer. This tests pattern matching, not retrieval of meaningful knowledge."
+    },
+    {
+      "rule": "Card selection — low-value / near-orphan card",
+      "card": "8",
+      "detail": "The fact that 'either side can initiate data transfer' is a relatively trivial/intuitive fact that fails the practitioner test — it doesn't meaningfully shape how someone uses or thinks about TCP. It could be dropped in favor of a more substantive why/how card."
+    },
+    {
+      "rule": "Type distribution — too few why/how cards",
+      "card": "general",
+      "detail": "Only cards 1, 5, and 6 are why/how cards (~37.5%). Cards 2, 3, 4, 7 are procedural/definitional (~50%), and card 8 is a low-value factual cloze. The set is slightly below the ~40% target for conceptual/why cards and over-indexes on step-by-step procedural cards (2, 3, 4) that walk through the handshake sequentially rather than testing understanding."
+    },
+    {
+      "rule": "Mirror-deducible cards",
+      "card": "2, 3, 4",
+      "detail": "Cards 2, 3, and 4 form a sequential enumeration of the three-way handshake steps. Knowing any two trivially gives you the third (SYN → SYN-ACK → ACK is a well-known sequence). These are partially mirror-deducible and could be consolidated. For example, a single cloze 'TCP three-way handshake: {{c1::SYN}} → {{c2::SYN-ACK}} → {{c3::ACK}}' would be more efficient, though per the skill's own rules this would be a cloze enumeration. Better approach: keep one card testing the sequence and replace the others with cards about WHY each step matters."
+    }
+  ],
+  "score_breakdown": "Started at 100. -5 for card 7 dual-question front. -5 for card 3 back with two facts. -5 for card 5 back with two facts. -4 for card 8 guessable cloze. -3 for card 8 low-value selection. -5 for type distribution imbalance. -5 for mirror-deducible sequential cards 2/3/4."
+}

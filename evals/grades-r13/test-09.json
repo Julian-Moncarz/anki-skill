@@ -1,0 +1,41 @@
+{
+  "overall_pass": false,
+  "score": 72,
+  "violations": [
+    {
+      "rule": "Back brevity / atomic — no 'which' joining a second fact",
+      "card": "11",
+      "detail": "Back is 'RSA encrypts a symmetric session key, which encrypts the actual data' — the ', which' clause adds a second fact (what the session key does). SKILL.md explicitly lists 'A, which B' as a violation pattern. Should split: card A = 'RSA encrypts a symmetric key' and card B = 'The symmetric key encrypts the actual data' or similar."
+    },
+    {
+      "rule": "Cloze enumeration — 2-item cloze listing distinct items",
+      "card": "8",
+      "detail": "Card 8 clozes two independent components: public key contains e, private key contains d. SKILL.md says 'A cloze with multiple fills listing distinct items is still an enumeration — even with just 2 items. If each fill is an independent fact (e.g., two enzyme names, two steps, two components), split into separate cards.' These are two independent facts (the exponent in each key) and should be separate basic cards."
+    },
+    {
+      "rule": "Cloze difficulty — blank guessable from context",
+      "card": "12",
+      "detail": "Card 12: 'sign with the {{c1::private}} key, verify with the {{c2::public}} key.' If you know there are only two key types (public and private), knowing c1 trivially gives c2. The surrounding words 'sign' and 'verify' also strongly hint at which key is which. The agent merged sign/verify to avoid mirrors but created a cloze where knowing one fill gives the other — still a mirror-deducible problem within a single card."
+    },
+    {
+      "rule": "Cloze enumeration — 2-item cloze listing distinct items",
+      "card": "9",
+      "detail": "Card 9 clozes e and d as two separate fills in two distinct formulas (encryption and decryption). Each fill is an independent fact. SKILL.md: 'If each fill is an independent fact... split into separate cards.' This is two formulas crammed into one card."
+    },
+    {
+      "rule": "Mirror-deducible within card / cloze difficulty",
+      "card": "9",
+      "detail": "In card 9, if you know encryption uses e (c1), decryption must use d (c2) since those are the only two exponents. The two cloze fills are trivially deducible from each other. The merge intended to fix the mirror problem but the fills remain mutually deducible."
+    },
+    {
+      "rule": "No enumerations, even disguised as cloze",
+      "card": "12",
+      "detail": "Card 12 lists two independent operations (sign and verify) with their respective keys as two cloze fills. Each fill is an independent fact. This is a 2-item cloze enumeration per SKILL.md rules."
+    },
+    {
+      "rule": "Card 3 back has causal 'because' structure issue — potential ambiguity",
+      "card": "3",
+      "detail": "The front asks 'Why is factoring n back into p and q computationally infeasible?' and the back is 'n is extremely large (2048+ bits)'. The answer is not wrong but is shallow — the real reason is that no known polynomial-time algorithm exists for integer factorization, not merely that n is large. A large number that is a product of small primes would be easy to factor. This could mislead the learner. The size of n is a necessary but not sufficient condition."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+
+
+I'll generate flashcards from this TCP content. Let me work through the card-worthy facts and run the self-checks.
+
+**Card-worthy facts identified:**
+1. Three-way handshake purpose and steps (SYN → SYN-ACK → ACK)
+2. Why sequence numbers matter (reassembly + missing segment detection)
+3. What happens on handshake failure (timeout + exponential backoff)
+4. Connection closing uses a four-way handshake (FIN/ACK)
+5. The handshake ensures agreement on sequence numbers before data transfer
+
+**Mirror check:** Cards 1 and 5 could overlap — I'll make sure they test different aspects (steps vs. purpose). SYN-ACK card needs care to not just be a mirror of the SYN card.
+
+**Skipping:** "What does SYN stand for?" (acronym expansion — low value). "Either side can send data" (trivially deducible from "connection established").
+
+Here are the cards:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | TCP: What are the three steps of the connection handshake, in order? | SYN → SYN-ACK → ACK | networking, tcp, handshake |
+| 2 | basic | TCP: Why must both sides agree on sequence numbers before data transfer begins? | To reassemble packets in order and detect missing segments | networking, tcp, sequence-numbers |
+| 3 | basic | TCP: What does the server's SYN-ACK accomplish beyond acknowledging the client? | It provides the server's own initial sequence number | networking, tcp, handshake |
+| 4 | basic | TCP: What retry strategy is used when a handshake attempt times out? | Exponential backoff | networking, tcp, reliability |
+| 5 | cloze | TCP connection teardown uses a {{c1::four}}-way handshake with FIN and ACK packets. | | networking, tcp, connection |
+| 6 | basic | TCP: Why is the handshake "three-way" rather than two-way? | Both sides need to send AND acknowledge sequence numbers, requiring three exchanges | networking, tcp, handshake |
+
+**Self-check results:**
+- **Mirror scan:** Cards 1 and 3 test different things (overall steps vs. what SYN-ACK specifically does). Cards 2 and 6 test different things (what seq numbers do vs. why three steps needed). Pass.
+- **Back scan:** Card 2 back has "and" — but "reassemble in order" and "detect missing segments" are both functions of the same mechanism (sequence numbers), tightly coupled. I'll keep it as these are inseparable uses of the same feature. All other backs are short. Pass.
+- **Cloze scan:** Card 5 — "four" is not guessable from context. Pass.
+- **Distribution:** 3 "why/how" cards (2, 3, 6), 1 process card (1), 1 strategy card (4), 1 fact card (5) — good mix.
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

@@ -1,0 +1,9 @@
+{
+  "overall_pass": false,
+  "score": 72,
+  "violations": [
+    {"rule": "Back brevity / no semicolons in back", "card": "1", "detail": "Back contains a semicolon joining two distinct facts: 'The gradient points toward steepest ascent; moving opposite minimizes the cost function'. Must be split into two cards per the back scan rule ('Every ; in a back is a bug')."},
+    {"rule": "No enumerations, even disguised as cloze / mirror-deducible", "card": "3", "detail": "Two-item cloze where c1=large and c2=small are independent facts and trivially deducible from each other (if one is 'large', the other must be 'small'). SKILL.md: 'A cloze with multiple fills listing distinct items is still an enumeration — even with just 2 items.' Should be split or one should be dropped."},
+    {"rule": "No enumerations / back lists alternatives with 'or'", "card": "7", "detail": "Front asks 'what two types of points' (enumeration question) and back answers 'Local minima or saddle points' using 'or' to list two items. Back scan rule: 'or (listing alternatives)? If yes, it has two facts — SPLIT IT.'"}
+  ]
+}

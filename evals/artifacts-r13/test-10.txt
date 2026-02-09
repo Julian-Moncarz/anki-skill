@@ -1,0 +1,14 @@
+
+
+Looking at this content, it only has 1-2 card-worthy facts. Let me apply the quality rules carefully.
+
+The famous "powerhouse of the cell" phrasing is explicitly called out in the skill as a bad cloze example (pattern matching, not retrieval). So I need to card the actual mechanism.
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | What is the primary function of mitochondria? | Producing ATP | biology, cell-biology |
+| 2 | basic | Through what process do mitochondria produce ATP? | Cellular respiration | biology, cell-biology |
+
+This content only has 2 card-worthy facts. Want me to expand on the topic (e.g., stages of cellular respiration, the electron transport chain) so I can make more cards?
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

@@ -1,0 +1,8 @@
+{
+  "overall_pass": false,
+  "score": 78,
+  "violations": [
+    {"rule": "Type distribution (~40% why/how cards)", "card": "general", "detail": "Both cards (100%) are definitional 'what is' cards. Zero why/how cards. Even with only 2 cards, at least one should test causal reasoning — e.g., 'Why do cells need mitochondria?' or 'Why is ATP production concentrated in mitochondria rather than the cytoplasm?'"},
+    {"rule": "One unambiguous answer", "card": "2", "detail": "'Through what process do mitochondria produce ATP?' could be answered as 'cellular respiration', 'oxidative phosphorylation', or 'chemiosmosis' depending on level of specificity. The question needs narrowing to ensure one clear answer."}
+  ]
+}

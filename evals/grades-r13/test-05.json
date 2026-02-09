@@ -1,0 +1,42 @@
+{
+  "overall_pass": false,
+  "score": 42,
+  "violations": [
+    {
+      "rule": "Table format: exactly 5 columns, one row per card",
+      "card": "general",
+      "detail": "The table has only 4 columns (missing the Back/Extra column as a separate column). Front and Back are merged into one column using **F:**/**B:** formatting across multiple rows. SKILL.md explicitly says: 'Do NOT use these formats: **F:** question **B:** answer in one cell' and 'Multi-row cards where Back is on a second row'. Every card spans two rows with Front on one row and Back on the next."
+    },
+    {
+      "rule": "Mirror-deducible card check",
+      "card": "5 and 6",
+      "detail": "Cards 5 and 6 are a classic mirror pair: 'CP sacrifices availability' and 'AP sacrifices consistency'. SKILL.md explicitly lists 'Sacrifice/gain pairs: CP sacrifices availability + AP sacrifices consistency — these are the same fact from two angles. Keep ONE card.' The agent's self-check rationalization that the 'mechanism differs' is wrong — 'refuses some requests' IS what sacrificing availability means, and 'serves stale data' IS what sacrificing consistency means. These are definitions of the sacrifice, not independent facts. SKILL.md says to keep ONE card."
+    },
+    {
+      "rule": "Back brevity / atomicity — no dash-elaboration",
+      "card": "5",
+      "detail": "Back is 'Availability — it refuses some requests'. The dash joins two facts: the property sacrificed and the mechanism. SKILL.md back scan rule says any back containing '—' has two facts and must be split. No exceptions."
+    },
+    {
+      "rule": "Back brevity / atomicity — no dash-elaboration",
+      "card": "6",
+      "detail": "Back is 'Consistency — it may serve stale data'. Same dash-elaboration violation as card 5."
+    },
+    {
+      "rule": "No enumerations / mirror-deducible triads",
+      "card": "1, 2, 3",
+      "detail": "Cards 1, 2, and 3 enumerate the three CAP guarantees as separate definitional cards. SKILL.md explicitly shows this as a BAD example: 'The three CAP guarantees are {{c1::Consistency}}, {{c2::Availability}}, {{c3::Partition Tolerance}}.' and says to replace with cards testing what each guarantee MEANS functionally. While these cards do test definitions rather than names, they still form a triad where the set itself is an enumeration of all three properties. More importantly, three definitional 'what does X guarantee' cards using the exact same structure is the enumeration pattern in disguise."
+    },
+    {
+      "rule": "Type distribution target",
+      "card": "general",
+      "detail": "Agent claims 36% definitional and 27% reasoning, but actual count: Cards 1,2,3 are definitional (what does X guarantee), card 10 is definitional (what consistency model), card 11 is definitional (what does eventual consistency mean) = 5 definitional out of 11 = 45%. Cards 7,8 are simple classification examples. Only cards 4 and 9 are genuine why/how/reasoning cards = 18%, well below the ~40% target."
+    },
+    {
+      "rule": "Cloze difficulty check",
+      "card": "7",
+      "detail": "HBase being CP vs AP — while not trivially guessable from context alone, the card set creates a pattern where if you know card 8 (Cassandra is AP), you can guess card 7 (HBase is CP) since these are presented as contrasting examples. This is a mild mirror-deducibility issue between cards 7 and 8."
+    }
+  ],
+  "score": 42
+}

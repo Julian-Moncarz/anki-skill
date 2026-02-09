@@ -44,6 +44,11 @@ Check the output against EVERY rule in the skill AND the card selection guide. E
 
 When SKILL.md and the card selection guide conflict, SKILL.md takes precedence.
 
+Important calibration notes:
+- When the agent merges mirror pairs into a single multi-cloze card (e.g., merging encrypt/decrypt into one card with two fills), this is the CORRECT fix for mirror-deducibility. Do NOT then penalize the cloze fills for being deducible from each other within the same card — the whole point of the merge is to test them together.
+- Type distribution targets (~40% why/how) are flexible when the source content is thin or purely factual. If the source only contains definitions and no causal content, the agent cannot invent why/how cards without going beyond the source. Do not penalize for this.
+- If the content only supports 1-2 cards, that is OK. Do not penalize for low card count when the agent correctly flags thin content to the user.
+
 Respond with ONLY valid JSON (no markdown fences, no explanation outside the JSON):
 {
   \"overall_pass\": boolean (true only if zero violations),

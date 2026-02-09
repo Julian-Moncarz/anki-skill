@@ -1,0 +1,16 @@
+Here are the cards I've generated from the CRISPR passage:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | CRISPR: What natural system was the Cas9 genome editing tool adapted from? | Bacterial immune defense against viruses | biology, crispr, genetics |
+| 2 | basic | CRISPR: How do bacteria store fragments of viral DNA for future defense? | As spacers in CRISPR arrays | biology, crispr, genetics |
+| 3 | basic | CRISPR: What role does guide RNA (gRNA) play in the Cas9 system? | Directs Cas9 to the matching target DNA sequence | biology, crispr, genetics |
+| 4 | basic | CRISPR: What type of DNA damage does Cas9 create at the target site? | A double-strand break | biology, crispr, genetics |
+| 5 | basic | CRISPR: How long is the synthetic guide RNA used in genome editing? | ~20 nucleotides | biology, crispr, genetics |
+| 6 | basic | CRISPR: Why is NHEJ (non-homologous end joining) useful for disrupting a gene? | It is error-prone, often introducing insertions or deletions | biology, crispr, repair |
+| 7 | basic | CRISPR: What is required in addition to HDR machinery to insert a new sequence at a cut site? | A donor template | biology, crispr, repair |
+| 8 | basic | CRISPR: What is the function of the PAM sequence in CRISPR-Cas9? | It is a required recognition site adjacent to the target for Cas9 to bind and cut | biology, crispr, genetics |
+| 9 | basic | CRISPR: What is the PAM sequence for S. pyogenes Cas9? | NGG | biology, crispr, genetics |
+| 10 | cloze | CRISPR: To disrupt a gene, rely on {{c1::NHEJ}}; to insert a specific sequence, rely on {{c1::HDR}} with a template. | | biology, crispr, repair |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

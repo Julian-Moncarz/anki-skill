@@ -58,7 +58,7 @@ Scale card count to the amount of card-worthy content provided:
 - Short explanation (1-2 key ideas): 3-5 cards
 - Medium explanation (several concepts): 8-15 cards
 - Long/detailed content (many concepts, relationships): 15-25 cards
-Never rephrase the same fact multiple ways to hit a count. Every card must test a DIFFERENT piece of knowledge from the source content. If the content only has 1-2 card-worthy facts, make 1-2 cards. Quality over quantity — a single excellent card beats three redundant ones.
+Never rephrase the same fact multiple ways to hit a count. Every card must test a DIFFERENT piece of knowledge from the source content. If the content only has 1-2 card-worthy facts, make exactly that many cards — even if it's just 1. Quality over quantity. Flag thin content to the user: "This only has 2 card-worthy facts. Want me to expand on the topic so I can make more cards?"
 
 **Mirror-deducible card check (CRITICAL — do this before presenting):**
 Scan your card set. If knowing card A's answer trivially gives you card B's answer, you have a mirror pair. Drop one card or merge into a single multi-cloze.
@@ -203,7 +203,12 @@ After generating your cards, STOP and run these checks. Fix violations before sh
 - Sign/verify: "sign with private" ↔ "verify with public" — trivially deducible
 Fix: merge into one multi-cloze, drop the deducible card, or reframe to test a non-obvious aspect.
 
-**Back scan:** Read every back. Does it contain "and", a dash, a semicolon, "which", or a comma followed by a verb? If yes, it probably has two facts — split it.
+**Back scan:** Read every back OUT LOUD. Does it contain ANY of these words/punctuation: "and", "—", ";", "which", ", introducing", ", causing", "or" (listing alternatives)? If yes, it has two facts — SPLIT IT. No exceptions. Examples:
+- "Faster per update and the noise helps escape minima" → SPLIT into two cards
+- "Acknowledges the client's seq number and provides its own" → SPLIT into two cards
+- "Stack: automatic; Heap: manual" → SPLIT into two cards
+- "It is error-prone, introducing insertions/deletions" → SPLIT into two cards
+Every "and", ";", or "—" in a back is a bug. Fix it before presenting.
 
 **Cloze scan:** For each cloze, read the sentence with the blank. Can you guess the answer from the surrounding words alone without knowing the topic? If yes, remove the hint words or restructure.
 

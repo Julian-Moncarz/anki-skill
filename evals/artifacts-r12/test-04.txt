@@ -1,0 +1,33 @@
+
+
+Here are the cards I've generated from the CRISPR passage:
+
+| # | Type | Front / Text | Tags |
+|---|------|-------------|------|
+| 1 | basic | **F:** What natural defense mechanism was CRISPR-Cas9 adapted from? **B:** Bacterial immune defense against viruses | biology, crispr, genetics |
+| 2 | basic | **F:** CRISPR: How do bacteria store fragments of viral DNA for future defense? **B:** As spacers in CRISPR arrays | biology, crispr, genetics |
+| 3 | basic | **F:** CRISPR: What role does guide RNA (gRNA) play in the Cas9 system? **B:** Directs Cas9 to the matching target DNA sequence | biology, crispr, genetics |
+| 4 | basic | **F:** CRISPR: What type of DNA damage does Cas9 create at the target site? **B:** A double-strand break | biology, crispr, genetics |
+| 5 | basic | **F:** CRISPR editing: How long is the synthetic guide RNA complementary region? **B:** ~20 nucleotides | biology, crispr, genetics |
+| 6 | basic | **F:** CRISPR: Why does NHEJ often disrupt the target gene? **B:** It is error-prone, introducing insertions or deletions during repair | biology, crispr, repair-mechanisms |
+| 7 | basic | **F:** CRISPR: What is required for HDR to insert a new sequence at the cut site? **B:** A donor DNA template | biology, crispr, repair-mechanisms |
+| 8 | basic | **F:** CRISPR: What is the PAM sequence, and why does it constrain target selection? **B:** A short motif (NGG for S. pyogenes Cas9) that must be adjacent to the target site for Cas9 to bind | biology, crispr, genetics |
+| 9 | cloze | CRISPR: After a double-strand break, {{c1::NHEJ}} disrupts the gene (error-prone), while {{c2::HDR}} can insert a new sequence (template-dependent). | biology, crispr, repair-mechanisms |
+
+Wait — card 8 has a long back and card 9 is a 2-item cloze enumeration. Let me fix those.
+
+Here's the corrected set:
+
+| # | Type | Front / Text | Back | Tags |
+|---|------|-------------|------|------|
+| 1 | basic | What natural defense mechanism was CRISPR-Cas9 adapted from? | Bacterial immune defense against viruses | biology, crispr |
+| 2 | basic | CRISPR: How do bacteria store captured viral DNA fragments for future defense? | As spacers in CRISPR arrays | biology, crispr |
+| 3 | basic | CRISPR: What role does guide RNA (gRNA) play in the Cas9 system? | Directs Cas9 to the matching target DNA sequence | biology, crispr |
+| 4 | basic | CRISPR: What type of DNA damage does Cas9 create at the target site? | A double-strand break | biology, crispr |
+| 5 | basic | CRISPR editing: How long is the synthetic guide RNA complementary region? | ~20 nucleotides | biology, crispr |
+| 6 | basic | CRISPR: Why does NHEJ often disrupt the target gene? | It is error-prone, introducing random insertions/deletions | biology, crispr, repair-mechanisms |
+| 7 | basic | CRISPR: What is required for HDR to insert a new sequence at the break site? | A donor DNA template | biology, crispr, repair-mechanisms |
+| 8 | basic | CRISPR: What role does the PAM sequence play in Cas9 targeting? | Cas9 can only bind and cut adjacent to a PAM site | biology, crispr |
+| 9 | basic | CRISPR: What is the PAM motif for S. pyogenes Cas9? | NGG | biology, crispr |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

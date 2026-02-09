@@ -1,0 +1,37 @@
+{
+  "overall_pass": false,
+  "score": 62,
+  "violations": [
+    {
+      "rule": "Table format: 5 columns required",
+      "card": "general (first table)",
+      "detail": "The first table presented has only 4 columns (missing the Back column). Cards use '**F:**/**B:**' merged into one cell. SKILL.md explicitly says: 'Do NOT use these formats: **F:** question **B:** answer in one cell'. Although the agent caught and corrected this, the first table was still presented to the user as part of the output."
+    },
+    {
+      "rule": "Back brevity / atomicity",
+      "card": "6",
+      "detail": "Back is 'It is error-prone, introducing random insertions/deletions'. Contains a comma followed by a participle ('introducing'), which the SKILL.md explicitly lists as a violation pattern ('A, introducing/causing/enabling B → comma + participle adds a consequence'). Should split: one card for 'why is NHEJ error-prone?' and another for 'what mutations does NHEJ introduce?'"
+    },
+    {
+      "rule": "Mirror-deducible cards",
+      "card": "6 and 7",
+      "detail": "Cards 6 (NHEJ disrupts gene) and 7 (HDR inserts new sequence) form a sacrifice/gain mirror pair. If there are only two repair pathways discussed, knowing one pathway's function trivially gives the other. The agent identified this in card 9 of the first draft but only removed the cloze enumeration — the underlying mirror pair persists as cards 6 and 7."
+    },
+    {
+      "rule": "Card type distribution target (~40% why/how)",
+      "card": "general",
+      "detail": "Of 9 cards: card 1 is definitional, card 2 is definitional/factual, card 3 is definitional (role), card 4 is factual, card 5 is factual, card 6 is why/how, card 7 is factual, card 8 is functional/why, card 9 is factual. Only ~2 of 9 cards (~22%) are clearly why/how/reasoning. The target is ~40%. The set is too heavily weighted toward definitions and facts."
+    },
+    {
+      "rule": "Specific constant values without understanding why",
+      "card": "5",
+      "detail": "Card 5 asks for '~20 nucleotides' — a specific constant value. Without a card explaining WHY it's ~20 nucleotides (e.g., trade-off between specificity and off-target effects), this is a low-value fact per the card selection guide."
+    },
+    {
+      "rule": "No subtopic tags",
+      "card": "general",
+      "detail": "SKILL.md tag strategy calls for subtopic-level tags (e.g., 'cas9', 'guide-rna', 'pam', 'double-strand-break'). Most cards only have 'biology, crispr' which is too coarse. Only cards 6 and 7 have a subtopic tag ('repair-mechanisms')."
+    }
+  ],
+  "score": 62
+}

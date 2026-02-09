@@ -1,0 +1,38 @@
+That error occurs when you try to iterate over (e.g., loop through, unpack, or pass to `list()`/`tuple()`) a value that is `None` instead of an iterable like a list, dict, or string.
+
+**Common causes:**
+
+1. **A function returns `None` implicitly:**
+   ```python
+   def get_items():
+       items = [1, 2, 3]
+       # forgot to return items!
+
+   for item in get_items():  # TypeError: 'NoneType' is not iterable
+       print(item)
+   ```
+
+2. **An in-place method that returns `None`:**
+   ```python
+   items = [3, 1, 2].sort()  # .sort() returns None, sorts in-place
+   for item in items:  # TypeError
+       print(item)
+   ```
+   Fix: `items = sorted([3, 1, 2])` or call `.sort()` separately.
+
+3. **Unpacking a `None` return value:**
+   ```python
+   a, b = some_function()  # TypeError if some_function() returns None
+   ```
+
+**How to fix it:**
+
+- **Find the line** — the traceback will tell you exactly which line triggers it. Look at what you're iterating over on that line.
+- **Trace back** to where that value comes from and figure out why it's `None`.
+- **Guard against it** if `None` is a valid case:
+  ```python
+  for item in get_items() or []:
+      print(item)
+  ```
+
+If you share the full traceback and the relevant code, I can pinpoint the exact issue for you.

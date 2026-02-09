@@ -1,0 +1,26 @@
+{
+  "overall_pass": false,
+  "score": 72,
+  "violations": [
+    {
+      "rule": "Back brevity / no semicolons joining two facts",
+      "card": "5",
+      "detail": "Back is 'SGD uses one random example; batch uses the entire dataset' — semicolon joins two independent facts. SKILL.md explicitly lists 'A; B → semicolon joins two independent facts' as a pattern that MUST be split."
+    },
+    {
+      "rule": "No enumerations, even disguised",
+      "card": "5",
+      "detail": "The card asks for a comparison that requires naming what BOTH SGD and batch do. This is effectively a 2-item enumeration. Should be split into separate cards or reframed to test one variant."
+    },
+    {
+      "rule": "Back brevity / no 'and' joining two distinct facts",
+      "card": "6",
+      "detail": "Back is 'Faster per update and the noise helps escape shallow local minima' — 'and' joins two distinct benefits (speed + noise-based escape). These are independent reasons and should be split into two cards or one should be trimmed."
+    },
+    {
+      "rule": "No enumerations / no asking to name N things",
+      "card": "8",
+      "detail": "Front asks 'what two types of points' — this is asking to list 2 items. Back is 'Local minima or saddle points' — two independent facts joined by 'or'. Should be split into separate cards, e.g. 'What is one risk of gradient descent on non-convex functions?' testing each concept individually."
+    }
+  ]
+}

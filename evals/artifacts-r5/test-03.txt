@@ -1,0 +1,20 @@
+
+
+Here are the Anki cards I've generated for stack vs. heap memory allocation:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | Memory allocation: Where are local variables stored by default? | The stack | memory-management, stack |
+| 2 | basic | Memory allocation: Where are dynamically allocated objects stored (e.g., via `new` or `malloc`)? | The heap | memory-management, heap |
+| 3 | basic | Stack memory: How is allocation/deallocation managed? | Automatically (LIFO order) | memory-management, stack |
+| 4 | basic | Heap memory: How is allocation/deallocation managed? | Manually by the programmer (or garbage collector) | memory-management, heap |
+| 5 | basic | Which is faster to allocate from: stack or heap? | Stack | memory-management, stack, heap |
+| 6 | basic | Why is stack allocation faster than heap allocation? | It only requires moving the stack pointer | memory-management, stack |
+| 7 | basic | What happens to stack memory when a function returns? | It is automatically freed | memory-management, stack |
+| 8 | basic | What risk does heap memory introduce if not properly managed? | Memory leaks | memory-management, heap |
+| 9 | basic | Memory allocation: Which type has a fixed, limited size per thread? | The stack | memory-management, stack |
+| 10 | basic | What error occurs when the stack's size limit is exceeded? | Stack overflow | memory-management, stack |
+| 11 | basic | Memory allocation: Which type can grow dynamically at runtime? | The heap | memory-management, heap |
+| 12 | cloze | Heap allocation can lead to {{c1::fragmentation}} over time as blocks are allocated and freed in varying sizes. | | memory-management, heap |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

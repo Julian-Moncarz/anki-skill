@@ -1,0 +1,35 @@
+
+
+Here's a function that reverses a singly linked list in Python:
+
+```python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def reverse_linked_list(head: ListNode) -> ListNode:
+    prev = None
+    curr = head
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+    return prev
+```
+
+**How it works:** Three pointers (`prev`, `curr`, `nxt`) walk through the list. At each step, the current node's `next` pointer is flipped to point backward. When `curr` becomes `None`, `prev` is the new head.
+
+**Example usage:**
+
+```python
+# Build: 1 -> 2 -> 3
+head = ListNode(1, ListNode(2, ListNode(3)))
+
+# Reverse: 3 -> 2 -> 1
+new_head = reverse_linked_list(head)
+```
+
+Time complexity: O(n). Space complexity: O(1).

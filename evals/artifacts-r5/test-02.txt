@@ -1,0 +1,16 @@
+
+
+Here are the flashcards I've generated for the TCP three-way handshake:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | TCP: What is the purpose of the three-way handshake? | To establish a reliable connection between two hosts | networking, tcp, three-way-handshake |
+| 2 | basic | TCP: What does the client send in the first step of the three-way handshake? | A SYN packet | networking, tcp, three-way-handshake |
+| 3 | basic | TCP: What does the server respond with in the second step of the three-way handshake? | A SYN-ACK packet | networking, tcp, three-way-handshake |
+| 4 | basic | TCP: What does the client send in the third and final step of the three-way handshake? | An ACK packet | networking, tcp, three-way-handshake |
+| 5 | cloze | TCP: The three-way handshake ensures both sides agree on initial {{c1::sequence numbers}} before data transfer begins. | | networking, tcp, three-way-handshake |
+| 6 | basic | TCP: What does SYN stand for? | Synchronize | networking, tcp, definition |
+| 7 | basic | TCP: What does ACK stand for? | Acknowledge | networking, tcp, definition |
+| 8 | basic | TCP: After the three-way handshake completes, what state is the connection in? | ESTABLISHED | networking, tcp, three-way-handshake |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

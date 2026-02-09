@@ -1,0 +1,9 @@
+
+
+Here's the card:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | What is the primary function of the mitochondria in a cell? | ATP production (cellular energy) | biology, cell-biology |
+
+This look good? I'll push it to Anki. Edit if you'd like to change anything.

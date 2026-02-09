@@ -1,0 +1,17 @@
+**TCP (Transmission Control Protocol)** and **UDP (User Datagram Protocol)** are both transport-layer protocols, but they differ in key ways:
+
+| | TCP | UDP |
+|---|---|---|
+| **Connection** | Connection-oriented (3-way handshake) | Connectionless |
+| **Reliability** | Guaranteed delivery with acknowledgments | No delivery guarantee |
+| **Ordering** | Preserves packet order | No ordering guarantee |
+| **Speed** | Slower (overhead from reliability) | Faster (minimal overhead) |
+| **Error checking** | Error checking + recovery | Error checking only (no recovery) |
+| **Flow control** | Yes (congestion/flow control) | No |
+| **Use cases** | Web (HTTP), email, file transfer | Streaming, gaming, DNS, VoIP |
+
+**In short:**
+- **TCP** prioritizes **reliability** — it makes sure every byte arrives, in order, retransmitting if needed. The tradeoff is latency.
+- **UDP** prioritizes **speed** — it fires packets without waiting for acknowledgment. Some data loss is acceptable in exchange for low latency.
+
+A common analogy: TCP is like a phone call (connection established, two-way confirmation), while UDP is like mailing postcards (send and hope they arrive).

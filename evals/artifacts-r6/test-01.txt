@@ -1,0 +1,20 @@
+
+
+Here are the Anki cards I've created about gradient descent:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | What is the goal of gradient descent? | Minimize a cost function | machine-learning, gradient-descent, definition |
+| 2 | cloze | The gradient descent update rule is: θ = θ − {{c1::α}} · ∇J(θ), where {{c1}} is called the **learning rate**. | | machine-learning, gradient-descent, formula |
+| 3 | basic | Gradient descent: What does ∇J(θ) represent? | The gradient of the cost function with respect to θ | machine-learning, gradient-descent, formula |
+| 4 | basic | Gradient descent: Why does the update rule subtract the gradient rather than add it? | The gradient points in the direction of steepest ascent | machine-learning, gradient-descent |
+| 5 | basic | Gradient descent: What happens if the learning rate is too large? | The algorithm overshoots and may diverge | machine-learning, gradient-descent, learning-rate |
+| 6 | basic | Gradient descent: What happens if the learning rate is too small? | Convergence becomes very slow | machine-learning, gradient-descent, learning-rate |
+| 7 | basic | Batch gradient descent computes the gradient using how much of the dataset? | The entire dataset | machine-learning, gradient-descent, variant |
+| 8 | basic | Stochastic gradient descent (SGD) computes the gradient using how many samples? | One sample per update | machine-learning, gradient-descent, variant |
+| 9 | basic | Mini-batch gradient descent computes the gradient using what? | A small random subset (batch) of the data | machine-learning, gradient-descent, variant |
+| 10 | basic | Gradient descent: What is a local minimum? | A point where the cost is lower than all nearby points but not necessarily the global lowest | machine-learning, gradient-descent |
+| 11 | basic | Gradient descent: At convergence, what is the value of the gradient? | Zero (or near zero) | machine-learning, gradient-descent |
+| 12 | basic | Why is SGD often preferred over batch gradient descent for large datasets? | It is much faster per update | machine-learning, gradient-descent, variant |
+
+These look good? I'll push them to Anki once you approve. Edit any you'd like to change.

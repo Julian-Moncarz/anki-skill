@@ -1,0 +1,23 @@
+
+
+Here are the CRISPR-Cas9 flashcards I've generated:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | What does CRISPR stand for? | Clustered Regularly Interspaced Short Palindromic Repeats | biology, genetics, CRISPR, definition |
+| 2 | basic | CRISPR: What is the natural biological function of CRISPR-Cas systems in bacteria? | Adaptive immune defense against viruses | biology, genetics, CRISPR, process |
+| 3 | basic | CRISPR: How do bacteria "remember" past viral infections using CRISPR? | They store fragments of viral DNA as spacers between repeats | biology, genetics, CRISPR, process |
+| 4 | basic | CRISPR: What molecule guides Cas9 to its target DNA sequence? | Guide RNA (gRNA) | biology, genetics, CRISPR, process |
+| 5 | basic | CRISPR: How does the guide RNA identify the correct target in the genome? | By complementary base pairing (~20 nucleotides) | biology, genetics, CRISPR, process |
+| 6 | basic | CRISPR: What type of break does Cas9 create in DNA? | A double-strand break (DSB) | biology, genetics, CRISPR, process |
+| 7 | basic | CRISPR: What short DNA motif must be adjacent to the target site for Cas9 to bind and cut? | PAM (Protospacer Adjacent Motif) | biology, genetics, CRISPR, process |
+| 8 | basic | CRISPR: What is the PAM sequence for *S. pyogenes* Cas9? | 5'-NGG-3' | biology, genetics, CRISPR, formula |
+| 9 | basic | CRISPR: Why does the PAM requirement prevent Cas9 from cutting the bacterium's own CRISPR locus? | The spacers in the bacterial genome lack adjacent PAM sequences | biology, genetics, CRISPR, process |
+| 10 | basic | CRISPR: Which Cas9 nuclease domain cleaves the complementary (target) strand? | HNH domain | biology, genetics, CRISPR, process |
+| 11 | basic | CRISPR: Which Cas9 nuclease domain cleaves the non-complementary strand? | RuvC domain | biology, genetics, CRISPR, process |
+| 12 | basic | CRISPR: What is the error-prone repair pathway that often introduces insertions or deletions after a double-strand break? | Non-homologous end joining (NHEJ) | biology, genetics, CRISPR, process |
+| 13 | basic | CRISPR: What repair pathway uses a donor DNA template to make precise edits at a double-strand break? | Homology-directed repair (HDR) | biology, genetics, CRISPR, process |
+| 14 | basic | CRISPR: To knock out a gene, which DNA repair pathway is typically relied upon? | NHEJ (its insertions/deletions disrupt the gene) | biology, genetics, CRISPR, process |
+| 15 | basic | CRISPR: To insert a specific new sequence at a cut site, which repair pathway is used? | Homology-directed repair (HDR) | biology, genetics, CRISPR, process |
+
+These look good? I'll push them to Anki once you approve. Feel free to edit, remove, or request changes to any cards.

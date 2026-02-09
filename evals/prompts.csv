@@ -1,0 +1,11 @@
+id,should_trigger,check_type,prompt
+test-01,true,explicit,"Use the $anki-card-maker skill to create Anki cards about how gradient descent works. Show me the cards for approval before pushing."
+test-02,true,implicit,"I just learned about how TCP does a three-way handshake to establish connections. Can you make flashcards for the key concepts?"
+test-03,true,implicit,"I learned about the difference between stack and heap memory allocation today. Please make anki cards for the important stuff."
+test-04,true,contextual,"I was reading about CRISPR gene editing and how Cas9 works as molecular scissors guided by RNA. Make me some spaced repetition cards on the key mechanisms."
+test-05,true,explicit,"$anki-card-maker: I need cards for the CAP theorem in distributed systems."
+test-06,false,negative,"Help me debug this Python error: TypeError: 'NoneType' object is not iterable"
+test-07,false,negative,"Write a function that reverses a linked list in Python"
+test-08,false,negative,"What's the difference between TCP and UDP?"
+test-09,true,implicit,"Make me flashcards about how RSA encryption works."
+test-10,true,edge,"I learned one thing: the mitochondria is the powerhouse of the cell. Make a card."

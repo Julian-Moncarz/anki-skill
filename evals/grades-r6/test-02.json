@@ -1,0 +1,21 @@
+{
+  "overall_pass": false,
+  "score": 75,
+  "violations": [
+    {
+      "rule": "No enumerations, even disguised as cloze",
+      "card": "5",
+      "detail": "Card 5 tests the middle step of a 3-step sequence. While it only has one cloze fill, the card is essentially testing recall of a sequence/list (SYN → SYN-ACK → ACK). This is partly mitigated by having only one fill, but the card's framing ('The sequence is...') invites enumeration thinking. Additionally, it is redundant with card 3, which already tests that the server responds with SYN-ACK."
+    },
+    {
+      "rule": "Back brevity / atomic",
+      "card": "9",
+      "detail": "Back is 'After the client sends the final ACK (step 3)' — this contains two facts: who sends it (the client) and which step number it is. The parenthetical '(step 3)' adds a new fact beyond answering the question. Should be trimmed to just 'After the final ACK' or 'Step 3 (final ACK)' — and the 'client sends' part is tested elsewhere (card 4)."
+    },
+    {
+      "rule": "One unambiguous answer",
+      "card": "8",
+      "detail": "The front asks 'What do the two hosts synchronize during the handshake?' — while 'sequence numbers' is the primary answer, one could also validly answer 'initial sequence numbers (ISNs)' or argue they also negotiate window sizes and other parameters. The question is slightly ambiguous."
+    }
+  ]
+}

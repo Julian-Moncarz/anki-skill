@@ -1,0 +1,41 @@
+{
+  "overall_pass": false,
+  "score": 85,
+  "violations": [
+    {
+      "rule": "Back brevity test — aim for under 10 words, no 'and' joining two facts",
+      "card": "5",
+      "detail": "Back is 12 words: \"Every read receives the most recent write or an error\". Could be trimmed."
+    },
+    {
+      "rule": "Back brevity test — aim for under 10 words",
+      "card": "7",
+      "detail": "Back is 11 words: \"The system continues operating despite network message loss between nodes\". Could be trimmed."
+    },
+    {
+      "rule": "Back brevity test — aim for under 10 words",
+      "card": "9",
+      "detail": "Back is 9 words: \"Network partitions are inevitable in real distributed environments\". Borderline but acceptable."
+    },
+    {
+      "rule": "Back brevity test — aim for under 10 words",
+      "card": "15",
+      "detail": "Back is 14 words: \"All replicas will converge to the same value given enough time without new writes\". Should be trimmed significantly."
+    },
+    {
+      "rule": "Back brevity test — parenthetical adding a NEW fact",
+      "card": "16",
+      "detail": "Back is \"2002 (by Gilbert and Lynch)\" — the parenthetical adds who proved it, which is a separate fact from when. Should be split into two cards or the parenthetical removed."
+    },
+    {
+      "rule": "Atomic — back has two facts joined",
+      "card": "10",
+      "detail": "Back is \"It sacrifices availability (may return errors)\" — the parenthetical adds an elaboration/consequence beyond the core answer. Should be just \"Availability\" or the elaboration should be a separate card."
+    },
+    {
+      "rule": "Atomic — back has two facts joined",
+      "card": "11",
+      "detail": "Back is \"It sacrifices consistency (may return stale data)\" — same issue as card 10. The parenthetical adds a new fact about what sacrificing consistency means in practice."
+    }
+  ]
+}

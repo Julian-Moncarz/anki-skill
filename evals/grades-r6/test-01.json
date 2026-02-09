@@ -1,0 +1,26 @@
+{
+  "overall_pass": false,
+  "score": 78,
+  "violations": [
+    {
+      "rule": "Back brevity test / Atomic (no 'and' joining two facts)",
+      "card": "5",
+      "detail": "Back is 'The algorithm overshoots and may diverge' — 'and' joins two distinct facts (overshooting and diverging). Should be split or trimmed to one consequence."
+    },
+    {
+      "rule": "Back brevity test (aim for under 10 words)",
+      "card": "3",
+      "detail": "Back is 'The gradient of the cost function with respect to θ' — 10 words. Could be trimmed, e.g., 'Gradient of the cost function' with θ context on the front."
+    },
+    {
+      "rule": "Back brevity test (aim for under 10 words) / Atomic",
+      "card": "10",
+      "detail": "Back is 'A point where the cost is lower than all nearby points but not necessarily the global lowest' — 18 words, contains two ideas (lower than neighbors AND not necessarily global). Should be split or heavily trimmed."
+    },
+    {
+      "rule": "One unambiguous answer",
+      "card": "12",
+      "detail": "Back is 'It is much faster per update' but there are other valid reasons SGD is preferred for large datasets (e.g., better generalization, escaping local minima, lower memory usage). The question doesn't constrain to a single answer."
+    }
+  ]
+}

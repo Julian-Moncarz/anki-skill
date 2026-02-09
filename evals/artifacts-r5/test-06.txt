@@ -1,0 +1,56 @@
+# Debugging `TypeError: 'NoneType' object is not iterable`
+
+This error means you're trying to iterate (loop over, unpack, etc.) a value that is `None` instead of an iterable like a list, tuple, or string.
+
+## Common Causes
+
+**1. Function returning `None` implicitly:**
+```python
+def get_items():
+    items = [1, 2, 3]
+    # forgot to return items!
+
+for item in get_items():  # TypeError: 'NoneType' is not iterable
+    print(item)
+```
+**Fix:** Add `return items` to the function.
+
+**2. In-place method that returns `None`:**
+```python
+my_list = [3, 1, 2].sort()  # .sort() returns None, sorts in place
+
+for item in my_list:  # TypeError
+    print(item)
+```
+**Fix:** Separate the calls:
+```python
+my_list = [3, 1, 2]
+my_list.sort()
+```
+Or use `sorted()` which returns a new list: `my_list = sorted([3, 1, 2])`
+
+**3. Unpacking a `None` value:**
+```python
+a, b = some_function_that_returns_none()  # TypeError
+```
+
+**4. Conditional path returns `None`:**
+```python
+def find_users(active):
+    if active:
+        return ["alice", "bob"]
+    # returns None implicitly when active is False
+```
+
+## How to Debug
+
+1. **Find the exact line** from the traceback.
+2. **Identify what's `None`** — look at what you're iterating over on that line.
+3. **Trace it back** — figure out why that variable is `None` (missing return, failed lookup, etc.).
+4. **Add a guard** if `None` is a valid possibility:
+   ```python
+   for item in (get_items() or []):
+       print(item)
+   ```
+
+If you share the specific code and traceback, I can pinpoint the exact issue.

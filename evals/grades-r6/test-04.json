@@ -1,0 +1,21 @@
+{
+  "overall_pass": false,
+  "score": 82,
+  "violations": [
+    {
+      "rule": "Back brevity / no dash-elaboration",
+      "card": "14",
+      "detail": "Back is 'NHEJ (its insertions/deletions disrupt the gene)' — the parenthetical adds a NEW fact (mechanism of disruption), not a standard abbreviation. This should be trimmed to just 'NHEJ' or the explanation split into a separate card."
+    },
+    {
+      "rule": "Atomic / back brevity",
+      "card": "5",
+      "detail": "Back is 'By complementary base pairing (~20 nucleotides)' — this packs two facts: the mechanism (base pairing) and the length (~20 nt). The length detail should be a separate card or removed."
+    },
+    {
+      "rule": "Atomic / back brevity",
+      "card": "3",
+      "detail": "Back is 'They store fragments of viral DNA as spacers between repeats' — this contains two facts: what is stored (viral DNA fragments) and where/how (as spacers between repeats). Could be split for stricter atomicity."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "overall_pass": false,
+  "score": 62,
+  "violations": [
+    {
+      "rule": "Back brevity (under 10 words)",
+      "card": "2",
+      "detail": "Back is 14 words: 'Every request receives a non-error response (without guarantee it's the most recent write)'. The parenthetical adds a new fact (what's NOT guaranteed), which should be a separate card or removed."
+    },
+    {
+      "rule": "Back brevity (under 10 words)",
+      "card": "3",
+      "detail": "Back is 14 words: 'The system continues to operate despite messages being dropped or delayed between nodes'. Trim to something like 'The system operates despite network message loss or delay'."
+    },
+    {
+      "rule": "Back brevity (under 10 words)",
+      "card": "4",
+      "detail": "Back is 17 words. Should be trimmed, e.g. 'At most two of: consistency, availability, partition tolerance'."
+    },
+    {
+      "rule": "Back brevity (under 10 words)",
+      "card": "5",
+      "detail": "Back is 13 words: 'Network partitions are inevitable in distributed systems, so you must tolerate them'. Trim to e.g. 'Network partitions are inevitable'."
+    },
+    {
+      "rule": "Atomicity — back has two facts joined by dash-elaboration",
+      "card": "7",
+      "detail": "Back is 'Availability — it may refuse requests to preserve consistency'. The dash adds elaboration which is a second fact. Should be just 'Availability'."
+    },
+    {
+      "rule": "Atomicity — back has two facts joined by dash-elaboration",
+      "card": "8",
+      "detail": "Back is 'Consistency — it may serve stale data to remain available'. Same dash-elaboration issue. Should be just 'Consistency'."
+    },
+    {
+      "rule": "Mirror-deducible cards",
+      "card": "7 and 8",
+      "detail": "If you know a CP system sacrifices availability, then an AP system sacrificing consistency is trivially deducible (and vice versa). These are mirror-deducible. Keep one or merge into a single multi-cloze card."
+    },
+    {
+      "rule": "Cloze difficulty — guessable from context",
+      "card": "10",
+      "detail": "The cloze 'Cassandra is classified as an {{c1::AP}} system in the CAP theorem because it prioritizes availability over consistency.' The answer 'AP' is directly guessable from 'prioritizes availability' in the surrounding text. The context gives away the answer."
+    },
+    {
+      "rule": "Historical trivia — skip unless studying history",
+      "card": "13",
+      "detail": "Card asks who conjectured the CAP theorem and when it was proved (Eric Brewer, 2000, 2002). This is historical trivia — a practitioner does not need these facts to use or apply the CAP theorem. The SKILL.md and card selection guide explicitly list 'year published, who invented it' as anti-patterns to skip."
+    },
+    {
+      "rule": "No enumerations (even disguised as cloze with 2 items)",
+      "card": "13",
+      "detail": "Card 13 has two independent cloze fills ({{c1::Eric Brewer}} and {{c2::2002}}) testing distinct facts (who and when). This is a 2-item cloze enumeration — each fill is an independent fact. Even if the card weren't trivia, it would need splitting."
+    },
+    {
+      "rule": "Back brevity (under 10 words)",
+      "card": "12",
+      "detail": "Back is 16 words: 'If no new updates are made, all replicas will eventually converge to the same value'. Trim to e.g. 'All replicas eventually converge to the same value'."
+    },
+    {
+      "rule": "Back brevity / atomicity",
+      "card": "14",
+      "detail": "Back is 28 words containing two distinct facts joined by a semicolon: (1) the misconception (permanently choose 2 of 3) and (2) the reality (tradeoff only during partitions). Should be split into separate cards or drastically trimmed."
+    },
+    {
+      "rule": "Card type distribution target (~40% why/how)",
+      "card": "general",
+      "detail": "Of 14 cards: ~4 are definitional (cards 1-3, 11-12), 2 are reasoning/why (5-6), 2 are tradeoff (7-8), 2 are application (9-10), 1 is misconception (14), 1 is trivia (13). The why/how proportion is ~14%, well below the ~40% target. Too many cards are definitional or classification-based."
+    }
+  ]
+}

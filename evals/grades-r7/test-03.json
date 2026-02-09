@@ -1,0 +1,42 @@
+{
+  "overall_pass": false,
+  "score": 72,
+  "violations": [
+    {
+      "rule": "Back brevity (under 10 words)",
+      "card": "13",
+      "detail": "Back is 20+ words with two distinct facts joined: the fixed stack size AND the heap growing to available memory. Should be split into separate cards."
+    },
+    {
+      "rule": "Atomic / one fact per card (back)",
+      "card": "13",
+      "detail": "The back contains two independent facts: (1) each thread gets a fixed-size stack (typically 1-8 MB), and (2) the heap can grow to use available system memory. These should be separate cards."
+    },
+    {
+      "rule": "Cloze difficulty check",
+      "card": "8",
+      "detail": "LIFO (last-in, first-out) is highly guessable from 'The stack grows in a ___ order' — stacks are almost synonymous with LIFO. Someone with even passing familiarity could guess this from context alone."
+    },
+    {
+      "rule": "Mirror-deducible / easily derived",
+      "card": "9 and 5",
+      "detail": "Card 9 ('Why can't stack-allocated data outlive the function?') is trivially deducible from card 5 ('When is stack memory freed? → When the function returns'). If you know stack memory is freed on return, you already know data can't outlive the function. Drop one or merge."
+    },
+    {
+      "rule": "Mirror-deducible / easily derived",
+      "card": "1 and 2",
+      "detail": "Cards 1 and 2 are near-mirrors: if you know local variables go on the stack, you can trivially deduce dynamic allocations go on the heap (the only other option). Consider merging into a single cloze or reframing to test a less obvious aspect."
+    },
+    {
+      "rule": "Card type distribution target (~40% why/how, ~30% definitions, ~20% application/reasoning, ~10% counterintuitive)",
+      "card": "general",
+      "detail": "Distribution is skewed toward definitional cards. Cards 1, 2, 5, 7, 8, 11, 12 are essentially definitional/label cards (~54%). Only cards 3, 4, 9, 10, 13 are why/how (~38%). There are no application/reasoning ('what happens if') cards and no counterintuitive/misconception cards. Add cards like 'What happens if you return a pointer to a stack-allocated variable?' or misconception cards."
+    },
+    {
+      "rule": "Specific constant values without understanding why",
+      "card": "13",
+      "detail": "The back includes 'typically 1-8 MB' — a specific constant range. The card should focus on WHY the stack is limited (e.g., each thread needs its own, so it must be bounded), not the specific size."
+    }
+  ],
+  "score_justification": "Good topic coverage with proper clustering (13 cards), mostly atomic fronts, correct formatting, and clear tags. Deducted for: mirror-deducible pairs (-8), back brevity/atomicity on card 13 (-6), guessable cloze (-4), type distribution skew with no application or misconception cards (-6), specific constant without understanding (-4)."
+}

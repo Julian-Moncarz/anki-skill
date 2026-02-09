@@ -9,6 +9,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SKILL_DIR="$(dirname "$SCRIPT_DIR")"
 SKILL_MD="$SKILL_DIR/SKILL.md"
+SELECTION_GUIDE="$SKILL_DIR/references/card-selection-guide.md"
 
 # Use the run number from run_evals.sh if set, otherwise find the latest artifacts dir
 if [ -n "${EVAL_RUN_NUM:-}" ]; then
@@ -29,12 +30,16 @@ mkdir -p "$GRADES_DIR"
 echo "=== Grading run $RUN_NUM ==="
 
 SKILL_CONTENT=$(cat "$SKILL_MD")
+SELECTION_CONTENT=$(cat "$SELECTION_GUIDE")
 
 GRADER_PROMPT="You are a strict evaluator. You will be given:
 1. A SKILL.md that defines rules for creating Anki flashcards
-2. The actual output from an agent that used this skill
+2. A card selection guide with community-sourced principles on WHAT deserves a card
+3. The actual output from an agent that used this skill
 
-Check the output against EVERY rule in the skill. For each violation, note it.
+Check the output against EVERY rule in the skill AND the card selection guide. Evaluate both:
+- CARD QUALITY: formatting, atomicity, brevity, ambiguity, etc. (from SKILL.md)
+- CARD SELECTION: are the right things being turned into cards? Are trivia/orphans/mirror-deducible cards present? Is the type distribution good (enough why/how cards, not all definitional)? (from both documents)
 
 Respond with ONLY valid JSON (no markdown fences, no explanation outside the JSON):
 {
@@ -50,6 +55,10 @@ If there are no violations, return an empty violations array and score 100.
 === SKILL.md ===
 $SKILL_CONTENT
 === END SKILL.md ===
+
+=== CARD SELECTION GUIDE ===
+$SELECTION_CONTENT
+=== END CARD SELECTION GUIDE ===
 
 === AGENT OUTPUT TO EVALUATE ==="
 

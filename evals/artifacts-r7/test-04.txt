@@ -1,0 +1,26 @@
+
+
+I'll research CRISPR-Cas9 thoroughly to create high-quality cards covering the key mechanisms.
+
+Here are the cards I've generated:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | CRISPR: What is the natural biological function of the CRISPR-Cas system in bacteria? | Adaptive immune defense against viral DNA | biology, genetics, crispr, mechanism |
+| 2 | basic | CRISPR: How do bacteria "remember" previous viral infections? | They store short fragments of viral DNA as spacers between CRISPR repeats | biology, genetics, crispr, mechanism |
+| 3 | basic | CRISPR: What molecule guides Cas9 to the correct DNA target? | Guide RNA (gRNA) | biology, genetics, crispr, mechanism |
+| 4 | basic | CRISPR: How does the guide RNA identify the target DNA sequence? | By complementary base pairing (~20 nucleotides) | biology, genetics, crispr, mechanism |
+| 5 | cloze | CRISPR: Before Cas9 can cut, it must first find a short motif adjacent to the target called the {{c1::PAM (protospacer adjacent motif)}} sequence. | | biology, genetics, crispr, mechanism |
+| 6 | basic | CRISPR: Why is the PAM sequence essential for Cas9 function? | It allows Cas9 to distinguish self DNA from foreign DNA and initiates strand separation | biology, genetics, crispr, mechanism |
+| 7 | basic | CRISPR: What PAM sequence does the most commonly used Cas9 (from S. pyogenes) recognize? | NGG (any nucleotide followed by two guanines) | biology, genetics, crispr, mechanism |
+| 8 | basic | CRISPR: What type of break does Cas9 create in the DNA? | A double-strand break (DSB) | biology, genetics, crispr, mechanism |
+| 9 | basic | CRISPR: Which Cas9 nuclease domain cleaves the DNA strand complementary to the gRNA? | HNH domain | biology, genetics, crispr, mechanism |
+| 10 | basic | CRISPR: Which Cas9 nuclease domain cleaves the non-complementary (displaced) strand? | RuvC domain | biology, genetics, crispr, mechanism |
+| 11 | basic | CRISPR: After Cas9 cuts DNA, what repair pathway usually causes gene knockout? | Non-homologous end joining (NHEJ) | biology, genetics, crispr, repair |
+| 12 | basic | CRISPR: Why does NHEJ repair often result in gene knockout? | It introduces random insertions/deletions (indels) that disrupt the reading frame | biology, genetics, crispr, repair |
+| 13 | basic | CRISPR: What repair pathway is used for precise gene editing (inserting a specific sequence)? | Homology-directed repair (HDR) | biology, genetics, crispr, repair |
+| 14 | basic | CRISPR: What extra component must be supplied to achieve HDR instead of NHEJ? | A donor DNA template with the desired sequence | biology, genetics, crispr, repair |
+| 15 | cloze | CRISPR: In natural bacterial immunity, the CRISPR locus is first {{c1::transcribed}} into a long RNA, then processed into individual short guide RNAs (crRNAs). | | biology, genetics, crispr, mechanism |
+| 16 | basic | CRISPR: What key simplification made CRISPR practical for lab use? | Fusing crRNA and tracrRNA into a single synthetic guide RNA (sgRNA) | biology, genetics, crispr, process |
+
+These look good? I'll push them to Anki once you approve. Edit any you'd like to change.

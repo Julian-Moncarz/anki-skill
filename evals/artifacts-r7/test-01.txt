@@ -1,0 +1,23 @@
+
+
+Here are the Anki cards I've generated for gradient descent. I've aimed for a mix of conceptual understanding, core definitions, application reasoning, and counterintuitive facts.
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | Gradient descent: What is the goal of the algorithm? | Minimize a cost function | machine-learning, gradient-descent, definition |
+| 2 | cloze | The gradient descent update rule is: θ = θ − {{c1::α}} · ∇J(θ), where {{c1}} is called the **learning rate**. | | machine-learning, gradient-descent, formula |
+| 3 | basic | Gradient descent: What does the gradient ∇J(θ) represent geometrically? | The direction of steepest ascent of the cost function | machine-learning, gradient-descent, concept |
+| 4 | basic | Gradient descent: Why does the update rule subtract the gradient rather than add it? | Because the gradient points uphill, and the goal is to go downhill toward the minimum | machine-learning, gradient-descent, concept |
+| 5 | basic | Gradient descent: What happens if the learning rate is too large? | The algorithm overshoots the minimum and may diverge | machine-learning, gradient-descent, failure-mode |
+| 6 | basic | Gradient descent: What happens if the learning rate is too small? | Convergence becomes very slow | machine-learning, gradient-descent, failure-mode |
+| 7 | basic | Gradient descent: What is the difference between a local minimum and a global minimum? | A local minimum is the lowest point in a neighborhood; a global minimum is the lowest point overall | machine-learning, gradient-descent, concept |
+| 8 | basic | Batch gradient descent computes the gradient using which portion of the training data? | The entire dataset | machine-learning, gradient-descent, variant |
+| 9 | basic | Stochastic gradient descent (SGD) computes the gradient using which portion of the training data? | A single randomly chosen example | machine-learning, gradient-descent, variant |
+| 10 | basic | Mini-batch gradient descent computes the gradient using which portion of the training data? | A small random subset (mini-batch) | machine-learning, gradient-descent, variant |
+| 11 | basic | Gradient descent: Why is SGD often preferred over batch gradient descent in practice? | It's much faster per update and can escape shallow local minima due to noise | machine-learning, gradient-descent, concept |
+| 12 | basic | Gradient descent: What property must the cost function have for gradient descent to work? | It must be differentiable (at least at the points being evaluated) | machine-learning, gradient-descent, concept |
+| 13 | cloze | Gradient descent is guaranteed to find the global minimum only when the cost function is {{c1::convex}}. | | machine-learning, gradient-descent, counterintuitive |
+| 14 | basic | Gradient descent: How do you know the algorithm has converged? | When the change in the cost function between iterations falls below a threshold | machine-learning, gradient-descent, application |
+| 15 | basic | Gradient descent: What is a saddle point, and why is it problematic? | A point where the gradient is zero but it's neither a minimum nor maximum — the algorithm can stall there | machine-learning, gradient-descent, failure-mode |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

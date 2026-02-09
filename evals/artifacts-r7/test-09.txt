@@ -1,0 +1,29 @@
+
+
+I'll research RSA encryption thoroughly and create high-quality flashcards. Let me design cards that cover the key mechanisms, not just surface-level definitions.
+
+Here are the cards:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | RSA: What type of cryptography is RSA? | Asymmetric (public-key) cryptography | rsa, cryptography, definition |
+| 2 | basic | RSA: How many keys does each participant have? | Two: one public, one private | rsa, cryptography |
+| 3 | basic | RSA: What is the first step in generating RSA keys? | Choose two large prime numbers (p and q) | rsa, cryptography, key-generation |
+| 4 | basic | RSA: What is the modulus n derived from? | The product of two primes: n = p × q | rsa, cryptography, key-generation |
+| 5 | basic | RSA: Why must p and q be kept secret after computing n? | Because factoring n back into p and q would break the encryption | rsa, cryptography, security |
+| 6 | cloze | RSA: The public key consists of the modulus n and the {{c1::public exponent e}}. | | rsa, cryptography, key-generation |
+| 7 | cloze | RSA: The private key consists of the modulus n and the {{c1::private exponent d}}. | | rsa, cryptography, key-generation |
+| 8 | basic | RSA: What is Euler's totient φ(n) when n = p × q? | φ(n) = (p − 1)(q − 1) | rsa, cryptography, key-generation, formula |
+| 9 | basic | RSA: What property must e satisfy relative to φ(n)? | e must be coprime with φ(n) (gcd(e, φ(n)) = 1) | rsa, cryptography, key-generation |
+| 10 | basic | RSA: What is the relationship between d and e? | d is the modular multiplicative inverse of e mod φ(n): d·e ≡ 1 (mod φ(n)) | rsa, cryptography, key-generation |
+| 11 | cloze | RSA encryption: ciphertext C = M{{c1::^e}} mod n, where M is the plaintext message. | | rsa, cryptography, formula |
+| 12 | cloze | RSA decryption: plaintext M = C{{c1::^d}} mod n, where C is the ciphertext. | | rsa, cryptography, formula |
+| 13 | basic | RSA: What hard mathematical problem makes RSA secure? | The integer factorization problem (factoring large n into p and q) | rsa, cryptography, security |
+| 14 | basic | RSA: Why is RSA rarely used to encrypt large messages directly? | It is computationally slow compared to symmetric encryption | rsa, cryptography, application |
+| 15 | basic | RSA: How is RSA typically used in practice for large data? | To encrypt a symmetric key, which then encrypts the actual data (hybrid encryption) | rsa, cryptography, application |
+| 16 | basic | RSA: What mathematical theorem guarantees that decryption reverses encryption? | Euler's theorem: M^(e·d) ≡ M (mod n) | rsa, cryptography, process |
+| 17 | basic | RSA: Besides encryption, what other operation can RSA perform using the private key? | Digital signatures (sign with private key, verify with public key) | rsa, cryptography, application |
+| 18 | basic | RSA: Why does doubling the key size more than double the security? | Because factoring difficulty grows exponentially with key size | rsa, cryptography, security |
+| 19 | basic | RSA: What type of attack would quantum computers use to break RSA? | Shor's algorithm (efficiently factors large integers) | rsa, cryptography, security |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

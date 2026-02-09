@@ -10,11 +10,9 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROMPTS_CSV="$SCRIPT_DIR/prompts.csv"
 RUBRIC="$SCRIPT_DIR/rubric.json"
 
-# Auto-version: find next run number
-RUN_NUM=1
-while [ -d "$SCRIPT_DIR/artifacts-r${RUN_NUM}" ] || [ -d "$SCRIPT_DIR/run-${RUN_NUM}" ]; do
-    RUN_NUM=$((RUN_NUM + 1))
-done
+# Auto-version: find highest existing run number and increment
+RUN_NUM=$(ls -d "$SCRIPT_DIR"/artifacts-r* "$SCRIPT_DIR"/grades-r* 2>/dev/null | sed 's/.*-r//' | sort -n | tail -1)
+RUN_NUM=$(( ${RUN_NUM:-0} + 1 ))
 ARTIFACTS_DIR="$SCRIPT_DIR/artifacts-r${RUN_NUM}"
 export EVAL_RUN_NUM="$RUN_NUM"
 export EVAL_ARTIFACTS_DIR="$ARTIFACTS_DIR"

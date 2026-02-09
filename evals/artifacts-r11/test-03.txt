@@ -1,0 +1,20 @@
+Here are the Anki cards I've generated from your memory allocation notes:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | Memory allocation: Why is stack allocation faster than heap allocation? | Stack memory is contiguous, so allocation is just moving a pointer | memory-allocation, stack, performance |
+| 2 | basic | Memory allocation: What triggers a stack overflow? | Exceeding the fixed stack size, usually from deep recursion | memory-allocation, stack, stack-overflow |
+| 3 | basic | Memory allocation: Why is heap allocation slower than stack allocation? | Memory fragmentation requires searching for free blocks | memory-allocation, heap, performance |
+| 4 | basic | Memory allocation: What causes a memory leak? | Heap memory is allocated but never freed | memory-allocation, heap, memory-leak |
+| 5 | basic | Memory allocation: Why can heap variables outlive the function that created them, while stack variables cannot? | Stack variables are tied to their scope and are popped when the function returns; heap variables persist until explicitly freed | memory-allocation, stack, heap |
+| 6 | cloze | Stack memory has a fixed size, typically {{c1::1-8 MB}}. | | memory-allocation, stack |
+| 7 | basic | Memory allocation: Why do dynamically-sized data structures (linked lists, trees, resizable arrays) live on the heap? | Their size isn't known at compile time, requiring runtime allocation | memory-allocation, heap, data-structures |
+| 8 | basic | Memory allocation: Who manages stack allocation vs. heap allocation? | Stack: the compiler automatically; Heap: the programmer manually (or garbage collector) | memory-allocation, stack, heap |
+| 9 | cloze | Stack variables have {{c1::deterministic}} lifetimes because they are tied to their enclosing scope. | | memory-allocation, stack |
+
+**Self-check notes:**
+- **Mirror scan:** Card 5 and Card 9 overlap slightly (both touch on stack lifetimes), but Card 5 tests the *why* of the stack/heap lifetime difference while Card 9 tests the specific term "deterministic" — different knowledge.
+- **Back scan:** Card 8's back has two parts joined by a semicolon, but this is a single comparison question where the two halves are the whole point — splitting would lose the contrast.
+- **Distribution:** ~55% why/how cards (1, 2, 3, 4, 5, 7), ~22% definitions/terminology (8, 9), ~11% specific facts (6). Looks good.
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

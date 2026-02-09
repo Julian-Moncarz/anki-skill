@@ -1,0 +1,26 @@
+{
+  "overall_pass": false,
+  "score": 82,
+  "violations": [
+    {
+      "rule": "Back brevity / no dash-elaboration",
+      "card": "8",
+      "detail": "Back contains a dash joining two facts: 'Cas9 can only cut at sites adjacent to a PAM sequence — it constrains where editing is possible'. Should be split into two cards or trimmed to just one fact (e.g., 'It marks the only sites where Cas9 can cut')."
+    },
+    {
+      "rule": "Cloze difficulty check — blank guessable from context",
+      "card": "5",
+      "detail": "The cloze '~{{c1::20}} nucleotides long' is a specific number that might pass, but '~20 nt' is an extremely common CRISPR factoid that borders on guessable. More importantly, deleting just a number from a sentence is a weak test — it tests recall of a specific constant value without understanding WHY that length matters, which the SKILL.md warns against ('specific constant values without understanding why they matter')."
+    },
+    {
+      "rule": "Specific constant values without understanding why",
+      "card": "5",
+      "detail": "Card tests the gRNA length (~20 nt) as a number to memorize. The card selection guide says to skip 'specific constant values without understanding why they matter.' A better card would ask WHY ~20 nt is the typical length (e.g., specificity in the genome) or test something more conceptual about gRNA design."
+    },
+    {
+      "rule": "Type distribution — at least ~40% why/how cards",
+      "card": "general",
+      "detail": "Distribution is borderline. Cards 3, 6, 7 are why/how (3 of 8 = 37.5%). Card 1 is definitional, card 2 is definitional, card 4 is definitional, card 5 is a constant, card 8 is mixed. Slightly below the ~40% target. Converting card 5 or card 2 into a 'why' card would fix this."
+    }
+  ]
+}

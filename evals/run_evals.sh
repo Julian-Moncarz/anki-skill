@@ -8,7 +8,6 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROMPTS_CSV="$SCRIPT_DIR/prompts.csv"
-RUBRIC="$SCRIPT_DIR/rubric.json"
 
 # Auto-version: find highest existing run number and increment
 RUN_NUM=$(ls -d "$SCRIPT_DIR"/artifacts-r* "$SCRIPT_DIR"/grades-r* 2>/dev/null | sed 's/.*-r//' | sort -n | tail -1)
@@ -22,107 +21,111 @@ echo "=== Run $RUN_NUM ==="
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
-YELLOW='\033[0;33m'
 NC='\033[0m'
 
+filter_id="${1:-}"
+
+# Collect tests to run
+declare -a test_ids=()
+declare -a test_triggers=()
+declare -a test_types=()
+declare -a test_prompts=()
+
+first=true
+while IFS=, read -r id should_trigger check_type prompt; do
+    if [ "$first" = "true" ]; then
+        first=false
+        continue
+    fi
+    prompt="${prompt%\"}"
+    prompt="${prompt#\"}"
+    if [ -n "$filter_id" ] && [ "$id" != "$filter_id" ]; then
+        continue
+    fi
+    test_ids+=("$id")
+    test_triggers+=("$should_trigger")
+    test_types+=("$check_type")
+    test_prompts+=("$prompt")
+done < "$PROMPTS_CSV"
+
+# Run all tests in parallel
+declare -a pids=()
+for i in "${!test_ids[@]}"; do
+    id="${test_ids[$i]}"
+    prompt="${test_prompts[$i]}"
+    output_file="$ARTIFACTS_DIR/${id}.txt"
+    (
+        claude -p "$prompt" > "$output_file" 2>/dev/null
+    ) &
+    pids+=($!)
+    echo "[$id] launched..."
+done
+
+# Wait for all to finish
+echo "Waiting for ${#pids[@]} tests to complete..."
+for pid in "${pids[@]}"; do
+    wait "$pid" 2>/dev/null || true
+done
+echo "All tests complete."
+
+# Now check results
 pass_count=0
 fail_count=0
-skip_count=0
 total=0
 
-run_test() {
-    local id="$1"
-    local should_trigger="$2"
-    local check_type="$3"
-    local prompt="$4"
-    local output_file="$ARTIFACTS_DIR/${id}.txt"
+for i in "${!test_ids[@]}"; do
+    id="${test_ids[$i]}"
+    should_trigger="${test_triggers[$i]}"
+    check_type="${test_types[$i]}"
+    output_file="$ARTIFACTS_DIR/${id}.txt"
 
     total=$((total + 1))
-    echo -n "[$id] ($check_type) ... "
 
-    # Run claude -p and capture output
-    if ! output=$(claude -p "$prompt" 2>/dev/null); then
-        echo -e "${RED}ERROR${NC} (claude -p failed)"
+    if [ ! -f "$output_file" ] || [ ! -s "$output_file" ]; then
+        echo -e "[$id] ($check_type) ... ${RED}ERROR${NC} (no output)"
         fail_count=$((fail_count + 1))
-        return
+        continue
     fi
 
-    echo "$output" > "$output_file"
+    output=$(cat "$output_file")
+    triggered=false
+    no_yesno=true
 
-    # Deterministic checks
-    local triggered=false
-    local has_table=false
-    local has_cards=false
-    local no_yesno=true
-    local atomic=true
-
-    # Check if skill triggered: look for numbered card rows like "| 1 | basic |" or "| 2 | cloze |"
-    # Requires a number followed by a card type in adjacent table cells
     if echo "$output" | grep -qE '\| *[0-9]+ *\| *(basic|cloze|reversed|\*\*basic\*\*|\*\*cloze\*\*|\*\*reversed\*\*) *\|'; then
         triggered=true
-        has_table=true
-        has_cards=true
     fi
 
-    # Check for yes/no violations
     if echo "$output" | grep -qiE '(→ *(Yes|No|True|False) *$|→ *(Yes|No|True|False) *\|)'; then
         no_yesno=false
     fi
 
-    # Evaluate result
-    local test_passed=true
-    local reason=""
+    test_passed=true
+    reason=""
 
     if [ "$should_trigger" = "true" ]; then
         if [ "$triggered" = "false" ]; then
             test_passed=false
             reason="Expected skill to trigger but it didn't"
-        elif [ "$has_table" = "false" ]; then
-            test_passed=false
-            reason="Skill triggered but no card table found"
         fi
         if [ "$no_yesno" = "false" ]; then
             test_passed=false
             reason="$reason; Contains yes/no answer cards"
         fi
     else
-        if [ "$triggered" = "true" ] && [ "$has_table" = "true" ]; then
+        if [ "$triggered" = "true" ]; then
             test_passed=false
             reason="Expected skill NOT to trigger but it generated cards"
         fi
     fi
 
     if [ "$test_passed" = "true" ]; then
-        echo -e "${GREEN}PASS${NC}"
+        echo -e "[$id] ($check_type) ... ${GREEN}PASS${NC}"
         pass_count=$((pass_count + 1))
     else
-        echo -e "${RED}FAIL${NC} — $reason"
+        echo -e "[$id] ($check_type) ... ${RED}FAIL${NC} — $reason"
         fail_count=$((fail_count + 1))
     fi
-}
-
-# Parse CSV and run tests
-filter_id="${1:-}"
-first=true
-
-while IFS=, read -r id should_trigger check_type prompt; do
-    # Skip header
-    if [ "$first" = "true" ]; then
-        first=false
-        continue
-    fi
-
-    # Remove surrounding quotes from prompt
-    prompt="${prompt%\"}"
-    prompt="${prompt#\"}"
-
-    # Filter to single test if specified
-    if [ -n "$filter_id" ] && [ "$id" != "$filter_id" ]; then
-        continue
-    fi
-
-    run_test "$id" "$should_trigger" "$check_type" "$prompt"
-done < "$PROMPTS_CSV"
+done
 
 echo ""
 echo "================================"

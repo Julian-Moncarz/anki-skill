@@ -1,0 +1,31 @@
+{
+  "overall_pass": false,
+  "score": 62,
+  "violations": [
+    {
+      "rule": "Make cards FROM the provided content only",
+      "card": "general",
+      "detail": "The agent output references evaluating 'The mitochondria is the powerhouse of the cell' but never shows the actual user input/content that was provided. The cards about ATP production and cellular respiration appear to draw on general knowledge rather than specific provided content. Without seeing the original input, it's impossible to confirm these cards are grounded in what was actually taught."
+    },
+    {
+      "rule": "Orphan facts / minimum cluster size",
+      "card": "general",
+      "detail": "The card selection guide states 'Minimum viable cluster: 3 cards per topic.' The set only has 2 cards. While SKILL.md says 'If the content only has 1-2 card-worthy facts, make 1-2 cards,' the selection guide's orphan test says if a topic would only generate 1-2 cards, either skip it or dig deeper. With only 2 cards, this is borderline — a third card testing WHY/HOW at more depth (e.g., where in the mitochondria respiration occurs, or what the key substrates are) would improve the cluster."
+    },
+    {
+      "rule": "Mirror-deducible cards",
+      "card": "1 and 2",
+      "detail": "Card 1 asks 'What is the primary function of mitochondria?' → 'Producing ATP'. Card 2 asks 'By what process do mitochondria produce ATP?' → 'Cellular respiration'. These are closely related but not strictly mirror-deducible — knowing 'producing ATP' doesn't trivially give you 'cellular respiration.' However, they are tightly coupled: both test the same narrow concept (mitochondria make energy) from slightly different angles, bordering on rephrasing the same fact."
+    },
+    {
+      "rule": "Card type distribution (~40% why/how cards)",
+      "card": "general",
+      "detail": "Both cards are essentially definitional/factual ('what is the function' and 'what is the process name'). Neither tests WHY or HOW in a meaningful causal sense. Card 2 asks 'by what process' but the answer is just a label ('cellular respiration'), not a mechanism. 0% of cards are true why/how reasoning cards; the target is ~40%."
+    },
+    {
+      "rule": "Label-only card",
+      "card": "2",
+      "detail": "Card 2 asks for the NAME of the process ('cellular respiration') rather than testing understanding of what that process involves or why it matters. This is a label-only card — it tests naming, not understanding. A better card would test a mechanistic aspect, e.g., 'What are the main inputs mitochondria use to produce ATP?' or 'Why do mitochondria require oxygen?'"
+    }
+  ]
+}

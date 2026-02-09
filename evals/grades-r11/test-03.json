@@ -1,0 +1,37 @@
+{
+  "overall_pass": false,
+  "score": 62,
+  "violations": [
+    {
+      "rule": "Back brevity / atomic (no semicolon joining two facts)",
+      "card": "5",
+      "detail": "Back contains two independent facts joined by a semicolon: 'Stack variables are tied to their scope and are popped when the function returns; heap variables persist until explicitly freed.' This should be split into separate cards or trimmed to answer only one side of the comparison."
+    },
+    {
+      "rule": "Back brevity / atomic (no semicolon joining two facts)",
+      "card": "8",
+      "detail": "Back is 'Stack: the compiler automatically; Heap: the programmer manually (or garbage collector)' — two distinct facts joined by semicolon. The self-check acknowledged this but excused it; SKILL.md explicitly lists semicolons as a violation pattern that 'MUST be split or trimmed.' Split into two cards."
+    },
+    {
+      "rule": "Mirror-deducible cards",
+      "card": "1 and 3",
+      "detail": "Card 1 asks why stack is faster than heap (answer: contiguous/pointer bump). Card 3 asks why heap is slower than stack (answer: fragmentation/searching). These are the same comparison from two angles — knowing one largely gives you the other. Merge into one card or reframe one to test a non-obvious aspect."
+    },
+    {
+      "rule": "Cloze difficulty check — guessable from context",
+      "card": "9",
+      "detail": "'Stack variables have {{c1::deterministic}} lifetimes because they are tied to their enclosing scope.' The word 'deterministic' is highly guessable given 'tied to their enclosing scope' — the surrounding context directly implies determinism. Restructure to remove the hint or test a different aspect."
+    },
+    {
+      "rule": "Card type distribution target (~40% why/how)",
+      "card": "general",
+      "detail": "Self-check claims ~55% why/how, but Card 2 ('What triggers a stack overflow?') and Card 4 ('What causes a memory leak?') are closer to definitional/factual than true 'why/how' reasoning cards. The actual why/how percentage is reasonable but the self-check is slightly inflated. Minor issue."
+    },
+    {
+      "rule": "Parenthetical adds new fact",
+      "card": "8",
+      "detail": "Back includes '(or garbage collector)' which introduces a new concept (garbage collection) as a parenthetical. This is a new fact, not an abbreviation. Should be its own card or removed."
+    }
+  ],
+  "score_justification": "Good topic selection and no trivia/orphan/label-only problems. However, two cards violate the explicit semicolon/atomicity rule (cards 5 and 8), there is a mirror-deducible pair (cards 1 and 3), and a cloze is guessable from context (card 9). The self-check caught the semicolon issue in card 8 but incorrectly excused it."
+}

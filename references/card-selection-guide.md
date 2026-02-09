@@ -140,7 +140,7 @@ If a topic would only generate 1 card, either:
 1. The topic is too simple to need a card (skip it), or
 2. You haven't thought deeply enough about what's worth knowing (dig deeper)
 
-Minimum viable cluster: 3 cards per topic.
+Prefer clusters of 2+ related cards, but never pad with redundant cards to hit a number. If the content only supports 1-2 card-worthy facts, make 1-2 cards.
 
 ---
 

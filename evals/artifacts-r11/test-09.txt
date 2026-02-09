@@ -1,0 +1,35 @@
+
+
+I'll create flashcards from your RSA notes. Let me work through the card selection carefully.
+
+**Content analysis:** Your notes cover RSA key generation (steps), encryption/decryption formulas, security basis, hybrid encryption rationale, and digital signatures. Let me identify card-worthy facts and run the self-checks.
+
+**Mirror check notes:**
+- "Encrypt with public / decrypt with private" — mirror pair. Merge into one multi-cloze.
+- "Sign with private / verify with public" — mirror pair. Merge into one multi-cloze.
+- Public key = (n,e) / private key = (n,d) — knowing one nearly gives the other (they share n, differ only in e vs d). Merge into one multi-cloze.
+
+**Distribution check:** Aiming for ~40% why/how, ~30% core definitions, ~20% application/reasoning, ~10% misconception.
+
+Here are the cards:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | RSA: What type of cryptography is it? | Asymmetric (public-key) | cryptography, rsa |
+| 2 | cloze | RSA key generation: first, choose two large {{c1::primes}} p and q. | | cryptography, rsa, key-generation |
+| 3 | basic | RSA: Why is n = p × q hard to reverse-engineer? | Factoring large integers (2048+ bits) is computationally infeasible | cryptography, rsa, security |
+| 4 | cloze | RSA: φ(n) is computed as {{c1::(p−1)(q−1)}} using Euler's totient function. | | cryptography, rsa, key-generation |
+| 5 | cloze | RSA: The public exponent e must satisfy {{c1::gcd(e, φ(n)) = 1}}. | | cryptography, rsa, key-generation |
+| 6 | basic | RSA: How is the private exponent d derived from e? | Modular inverse of e mod φ(n) | cryptography, rsa, key-generation |
+| 7 | cloze | RSA: The public key is (n, {{c1::e}}) and the private key is (n, {{c2::d}}). | | cryptography, rsa |
+| 8 | cloze | RSA encryption: ciphertext = message{{c1::^e}} mod {{c2::n}} | | cryptography, rsa, formula |
+| 9 | cloze | RSA: In RSA, the {{c1::public}} key encrypts and the {{c2::private}} key decrypts. | | cryptography, rsa |
+| 10 | basic | RSA: Why is it rarely used to encrypt data directly? | It's too slow for bulk data | cryptography, rsa, reasoning |
+| 11 | basic | RSA: What is hybrid encryption and why is it used with RSA? | RSA encrypts a symmetric session key, which encrypts the actual data — combining RSA's security with symmetric speed | cryptography, rsa, hybrid-encryption |
+| 12 | cloze | RSA digital signatures: sign with the {{c1::private}} key, verify with the {{c2::public}} key. | | cryptography, rsa, digital-signatures |
+
+**Distribution:** 3 why/how cards (#3, #10, #11) = 25%, 4 core definition/notation (#1, #2, #7, #9) = 33%, 4 formula/process (#4, #5, #6, #8) = 33%, 1 application (#12) = 8%. Slightly definition-heavy but the content is inherently procedural.
+
+**Back length check:** All backs are under 10 words except #11 — but that card asks a compound "what + why" question which I think is justified since hybrid encryption is a single concept. I can split it if you prefer.
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

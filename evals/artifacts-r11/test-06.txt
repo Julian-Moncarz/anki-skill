@@ -1,0 +1,11 @@
+Now I see the full picture. Your message contains the content of `prompts.csv` — which is an eval test suite for the `anki-card-maker` skill. The line `test-06,false,negative,"Help me debug this Python error: TypeError: 'NoneType' object is not iterable"` is a **negative control test case** — it's checking that the anki-card-maker skill does NOT trigger when someone asks a normal coding question.
+
+So you're not actually asking me to debug a Python error. You're showing me (or accidentally pasted) the eval prompts CSV.
+
+**What would you like me to do?** Some possibilities:
+
+1. **Run the evals** (`./run_evals.sh`) to test the anki-card-maker skill
+2. **Review/improve the eval framework** (the scripts, prompts, rubric)
+3. **Something else with this CSV data**
+
+Or, if you genuinely do have a `TypeError: 'NoneType' object is not iterable` — please share the actual Python code/traceback and I'll debug it for you.

@@ -1,0 +1,41 @@
+{
+  "overall_pass": false,
+  "score": 62,
+  "violations": [
+    {
+      "rule": "Mirror-deducible cards",
+      "card": "5 and 6",
+      "detail": "Cards 5 and 6 are a sacrifice/gain mirror pair. If a CP system 'refuses requests to maintain consistency' during a partition, you can trivially deduce that an AP system does the opposite (serves data to remain available). The SKILL.md explicitly calls out 'CP sacrifices availability / AP sacrifices consistency' as a mirror pattern. Should merge into one multi-cloze or keep only one."
+    },
+    {
+      "rule": "Mirror-deducible cards",
+      "card": "7 and 8",
+      "detail": "MongoDB is CP and Cassandra is AP. With only two classification options relevant (CP or AP), knowing one system's classification makes the other more guessable, especially since they are adjacent cards. Not as strong a mirror as 5/6, but still a deducible pair given the binary choice."
+    },
+    {
+      "rule": "Back brevity / Atomic",
+      "card": "9",
+      "detail": "The back contains two facts joined by a dash: (1) the tradeoff only applies during partitions, and (2) when there's no partition you can have both. The second clause after the dash is elaboration. Should be trimmed to just 'The tradeoff only applies during network partitions' or split."
+    },
+    {
+      "rule": "Cloze difficulty check",
+      "card": "8",
+      "detail": "Given that card 7 already establishes MongoDB as CP, and there are only two options (CP/AP), Cassandra being AP is trivially deducible. The cloze blank becomes a 50/50 guess even without topic knowledge, and nearly certain if the user has just reviewed card 7."
+    },
+    {
+      "rule": "Type distribution",
+      "card": "general",
+      "detail": "Distribution count: 4 definitions (#1, #2, #3, #10), 3 reasoning/how (#4, #5, #6), 1 misconception (#9), 2 classification cloze (#7, #8). That's 40% definitional, 30% reasoning, 10% misconception, 20% classification. This is borderline acceptable but the reasoning cards are weakened by the mirror issue, effectively reducing distinct reasoning content."
+    },
+    {
+      "rule": "Back brevity",
+      "card": "3",
+      "detail": "Back is 'The system continues operating despite network partitions between nodes' — 9 words plus filler. Could be trimmed to 'Continues operating despite network partitions' (5 words)."
+    },
+    {
+      "rule": "Mandatory self-check not shown",
+      "card": "general",
+      "detail": "SKILL.md requires a mandatory self-check (Step 2.5) BEFORE presenting cards, including mirror scan, back scan, cloze scan, and distribution count. The agent output shows no evidence of performing these checks, and the mirror violations that exist confirm the checks were not done or were ineffective."
+    }
+  ]
+}

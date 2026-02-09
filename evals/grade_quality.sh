@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Rubric-based quality grading for anki-card-maker skill
-# Uses the SKILL.md itself as the rubric — checks output against every rule in the skill.
+# Uses the SKILL.md + card selection guide as the rubric.
 #
 # Usage: ./grade_quality.sh [test-id]
 
@@ -15,7 +15,6 @@ SELECTION_GUIDE="$SKILL_DIR/references/card-selection-guide.md"
 if [ -n "${EVAL_RUN_NUM:-}" ]; then
     RUN_NUM="$EVAL_RUN_NUM"
 else
-    # Find the highest numbered artifacts-rN directory
     RUN_NUM=$(ls -d "$SCRIPT_DIR"/artifacts-r* 2>/dev/null | sed 's/.*artifacts-r//' | sort -n | tail -1)
     if [ -z "$RUN_NUM" ]; then
         echo "No artifacts found. Run run_evals.sh first."
@@ -37,9 +36,13 @@ GRADER_PROMPT="You are a strict evaluator. You will be given:
 2. A card selection guide with community-sourced principles on WHAT deserves a card
 3. The actual output from an agent that used this skill
 
+IMPORTANT: The agent WAS given source content as part of its prompt. You cannot see the original prompt, so do NOT penalize for 'not showing source content' or 'using general knowledge' — assume content was provided and the cards are based on it.
+
 Check the output against EVERY rule in the skill AND the card selection guide. Evaluate both:
 - CARD QUALITY: formatting, atomicity, brevity, ambiguity, etc. (from SKILL.md)
 - CARD SELECTION: are the right things being turned into cards? Are trivia/orphans/mirror-deducible cards present? Is the type distribution good (enough why/how cards, not all definitional)? (from both documents)
+
+When SKILL.md and the card selection guide conflict, SKILL.md takes precedence.
 
 Respond with ONLY valid JSON (no markdown fences, no explanation outside the JSON):
 {
@@ -67,9 +70,10 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 filter_id="${1:-}"
-pass_count=0
-fail_count=0
-total=0
+
+# Collect artifacts to grade
+declare -a grade_ids=()
+declare -a grade_files=()
 
 for artifact in "$ARTIFACTS_DIR"/test-*.txt; do
     test_id=$(basename "$artifact" .txt)
@@ -84,20 +88,27 @@ for artifact in "$ARTIFACTS_DIR"/test-*.txt; do
         continue
     fi
 
-    total=$((total + 1))
-    echo -n "[$test_id] Grading... "
+    grade_ids+=("$test_id")
+    grade_files+=("$artifact")
+done
 
-    cards_content=$(cat "$artifact")
+# Launch all grading in parallel
+declare -a pids=()
+for i in "${!grade_ids[@]}"; do
+    test_id="${grade_ids[$i]}"
+    artifact="${grade_files[$i]}"
     grade_file="$GRADES_DIR/${test_id}.json"
+    cards_content=$(cat "$artifact")
 
-    if grade=$(claude -p "${GRADER_PROMPT}
+    (
+        grade=$(claude -p "${GRADER_PROMPT}
 ${cards_content}
-=== END OUTPUT ===" 2>/dev/null); then
-        # Extract JSON from response (handles markdown fences, preamble text, etc.)
+=== END OUTPUT ===" 2>/dev/null || echo '{"overall_pass":false,"score":0,"violations":[{"rule":"grading error","card":"general","detail":"claude -p failed"}]}')
+
+        # Extract JSON from response
         clean_grade=$(echo "$grade" | python3 -c "
 import sys, re, json
 text = sys.stdin.read().strip()
-# Try to find JSON object in the text
 match = re.search(r'\{[\s\S]*\}', text)
 if match:
     candidate = match.group(0)
@@ -105,7 +116,6 @@ if match:
         json.loads(candidate)
         print(candidate)
     except json.JSONDecodeError:
-        # Try to find the last complete JSON object
         for m in re.finditer(r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', text):
             try:
                 json.loads(m.group(0))
@@ -118,8 +128,36 @@ else:
 " 2>/dev/null || echo "$grade")
 
         echo "$clean_grade" > "$grade_file"
+    ) &
+    pids+=($!)
+    echo "[$test_id] grading launched..."
+done
 
-        result=$(python3 -c "
+# Wait for all grading to finish
+echo "Waiting for ${#pids[@]} grades to complete..."
+for pid in "${pids[@]}"; do
+    wait "$pid" 2>/dev/null || true
+done
+echo "All grading complete."
+echo ""
+
+# Now report results
+pass_count=0
+fail_count=0
+total=0
+
+for i in "${!grade_ids[@]}"; do
+    test_id="${grade_ids[$i]}"
+    grade_file="$GRADES_DIR/${test_id}.json"
+    total=$((total + 1))
+
+    if [ ! -f "$grade_file" ] || [ ! -s "$grade_file" ]; then
+        echo -e "[$test_id] ${RED}ERROR${NC} (no grade file)"
+        fail_count=$((fail_count + 1))
+        continue
+    fi
+
+    result=$(python3 -c "
 import json, sys
 d = json.load(open('$grade_file'))
 score = d['score']
@@ -131,19 +169,15 @@ for v in violations:
     print(f\"  - [{v.get('card','?')}] {v['rule']}: {v['detail']}\")
 " 2>/dev/null || echo "?\n?\nPARSE ERROR")
 
-        score=$(echo "$result" | head -1)
-        passed=$(echo "$result" | sed -n '2p')
+    score=$(echo "$result" | head -1)
+    passed=$(echo "$result" | sed -n '2p')
 
-        if [ "$passed" = "True" ]; then
-            echo -e "${GREEN}PASS${NC} (score: $score/100)"
-            pass_count=$((pass_count + 1))
-        else
-            echo -e "${RED}FAIL${NC} (score: $score/100)"
-            echo "$result" | tail -n +3
-            fail_count=$((fail_count + 1))
-        fi
+    if [ "$passed" = "True" ]; then
+        echo -e "[$test_id] ${GREEN}PASS${NC} (score: $score/100)"
+        pass_count=$((pass_count + 1))
     else
-        echo -e "${RED}ERROR${NC} (grading failed)"
+        echo -e "[$test_id] ${RED}FAIL${NC} (score: $score/100)"
+        echo "$result" | tail -n +3
         fail_count=$((fail_count + 1))
     fi
 done

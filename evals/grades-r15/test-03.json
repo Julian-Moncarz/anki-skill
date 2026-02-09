@@ -1,0 +1,13 @@
+{
+  "overall_pass": false,
+  "score": 42,
+  "violations": [
+    {"rule": "back brevity / atomicity (no 'so' joining two facts)", "card": "1", "detail": "Back is 11 words and uses 'so' to join two distinct facts: (1) stack memory is contiguous, (2) allocation is just moving a pointer. Must split into two cards."},
+    {"rule": "back brevity / atomicity (no 'so' joining two facts)", "card": "4", "detail": "Back is 14 words and uses 'so' to join two distinct facts: (1) heap memory is non-contiguous, (2) allocator must search for free blocks. Also has a non-abbreviation parenthetical '(fragmentation)' adding a new concept."},
+    {"rule": "back brevity / atomicity (no 'so' joining two facts)", "card": "5", "detail": "Back is 13 words and uses 'so' to join two distinct facts: (1) size isn't known at compile time, (2) memory must be requested at runtime. Must split."},
+    {"rule": "mirror-deducibility", "card": "1 and 4", "detail": "Cards 1 and 4 are the same fact from two angles: 'stack fast because contiguous' vs 'heap slow because non-contiguous'. Knowing one trivially gives you the other. Must merge or drop one."},
+    {"rule": "no cloze enumerations (2-item cloze with independent facts)", "card": "6", "detail": "c1 tests a stack property ('deterministic') and c2 tests a heap property ('outlive the function'). These are two independent facts about two different things joined by 'while' — a 2-item cloze enumeration. Must split into separate cards."},
+    {"rule": "specific constant value without understanding why", "card": "3", "detail": "Tests a bare numeric value '1-8 MB' without any card explaining why the stack has this limit or why the number matters. This is a specific constant without understanding."},
+    {"rule": "binary choice giveaway in front", "card": "9", "detail": "Front offers exactly two choices ('the programmer or the compiler'), reducing recall to a 50/50 recognition task. Should ask 'Who manages stack allocation?' without listing options."}
+  ]
+}

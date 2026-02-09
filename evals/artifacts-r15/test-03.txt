@@ -1,0 +1,17 @@
+
+
+Here are the cards I've generated from your memory allocation notes:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | Memory allocation: Why is stack allocation faster than heap allocation? | Stack memory is contiguous, so allocation is just moving a pointer | memory-allocation, stack |
+| 2 | basic | Memory allocation: What typically causes a stack overflow? | Deep recursion | memory-allocation, stack |
+| 3 | basic | Memory allocation: What is the typical size limit of the stack? | 1–8 MB | memory-allocation, stack |
+| 4 | basic | Memory allocation: Why is heap allocation slower than stack allocation? | Heap memory is non-contiguous, so the allocator must search for free blocks (fragmentation) | memory-allocation, heap |
+| 5 | basic | Memory allocation: Why do dynamically-sized data structures (linked lists, trees, resizable arrays) live on the heap rather than the stack? | Their size isn't known at compile time, so memory must be requested at runtime | memory-allocation, heap |
+| 6 | cloze | Stack variables have {{c1::deterministic}} lifetimes tied to their enclosing scope, while heap variables can {{c2::outlive the function}} that created them. | | memory-allocation, lifetime |
+| 7 | basic | Memory allocation: What causes a memory leak? | Heap memory is allocated but never freed | memory-allocation, heap |
+| 8 | basic | Memory allocation: When are stack variables deallocated? | When the function that created them returns | memory-allocation, stack |
+| 9 | basic | Memory allocation: Who manages stack allocation — the programmer or the compiler? | The compiler | memory-allocation, stack |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

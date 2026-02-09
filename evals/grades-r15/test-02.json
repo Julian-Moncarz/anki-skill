@@ -1,0 +1,41 @@
+{
+  "overall_pass": false,
+  "score": 35,
+  "violations": [
+    {
+      "rule": "Back brevity / atomicity",
+      "card": "Card 1",
+      "detail": "Back 'A SYN packet with an initial sequence number' contains two facts: (1) sends a SYN packet, (2) includes an initial sequence number. Should be split."
+    },
+    {
+      "rule": "Back brevity / atomicity",
+      "card": "Card 3",
+      "detail": "Back 'The client sends an ACK confirming the server's sequence number' packs two facts via the participle 'confirming': (1) client sends an ACK, (2) ACK confirms the server's sequence number. Should be split."
+    },
+    {
+      "rule": "Back brevity — no 'and' joining two facts",
+      "card": "Card 4",
+      "detail": "Back 'To reassemble packets in order and detect missing segments' joins two distinct purposes with 'and'. Must be split into two cards."
+    },
+    {
+      "rule": "Back brevity — no 'and' joining two facts / atomicity",
+      "card": "Card 5",
+      "detail": "Back 'The connection times out and the initiator retries with exponential backoff' joins two events with 'and' and actually contains three facts (timeout, retry, exponential backoff). 11 words, exceeds guideline. Must be split."
+    },
+    {
+      "rule": "Back brevity — parenthetical adds new facts / enumeration",
+      "card": "Card 6",
+      "detail": "Back 'Four (using FIN and ACK packets)' adds new facts via parenthetical (which packet types) beyond the count answer. Also, asking 'how many steps' is effectively an enumeration-count card with low conceptual value."
+    },
+    {
+      "rule": "Cloze guessable from context",
+      "card": "Card 7",
+      "detail": "'After a TCP connection is established, {{c1::either side}} can initiate data transfer' — the blank is highly constrained by context and grammar; few alternatives fit. Also tests a marginal fact."
+    },
+    {
+      "rule": "Type distribution",
+      "card": "general",
+      "detail": "Only 1 of 7 cards (~14%) is a why/how card. Target is ~40%. TCP has rich causal content (why three-way vs two-way? why exponential backoff? why four-way close?) that was not leveraged."
+    }
+  ]
+}

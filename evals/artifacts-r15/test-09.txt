@@ -1,0 +1,53 @@
+
+
+Here are the flashcards I generated from your RSA notes:
+
+| # | Type | Front / Text | Tags |
+|---|------|-------------|------|
+| 1 | basic | What type of cryptography is RSA? | Asymmetric (public-key) cryptography | cryptography, rsa |
+| 2 | basic | RSA key generation: What is the first step? | Choose two large primes p and q | cryptography, rsa, key-generation |
+| 3 | basic | RSA: How is the modulus n computed? | n = p × q | cryptography, rsa, key-generation |
+| 4 | basic | RSA: What function is used to compute φ(n)? | Euler's totient function | cryptography, rsa, key-generation |
+| 5 | basic | RSA: How is φ(n) computed from p and q? | φ(n) = (p−1)(q−1) | cryptography, rsa, key-generation |
+| 6 | basic | RSA: What condition must e satisfy relative to φ(n)? | gcd(e, φ(n)) = 1 | cryptography, rsa, key-generation |
+| 7 | basic | RSA: What is the most commonly chosen value for the public exponent e? | 65537 | cryptography, rsa, key-generation |
+| 8 | basic | RSA: How is the private exponent d derived from e? | d = modular inverse of e mod φ(n) | cryptography, rsa, key-generation |
+| 9 | cloze | RSA: The public key is (n, {{c1::e}}) and the private key is (n, {{c2::d}}). | cryptography, rsa |
+| 10 | basic | RSA: What is the encryption formula? | ciphertext = message^e mod n | cryptography, rsa, formula |
+| 11 | basic | RSA: What is the decryption formula? | message = ciphertext^d mod n | cryptography, rsa, formula |
+| 12 | basic | RSA: What hard mathematical problem does its security rely on? | Factoring n back into its prime factors p and q | cryptography, rsa, security |
+| 13 | basic | RSA: What is the minimum recommended key size for security? | 2048 bits | cryptography, rsa, security |
+| 14 | basic | Why is RSA rarely used to encrypt data directly? | It is too slow for bulk data | cryptography, rsa, application |
+| 15 | basic | RSA: What does hybrid encryption mean in practice? | RSA encrypts a symmetric session key, which encrypts the actual data | cryptography, rsa, application |
+
+Wait — let me run the self-checks before presenting final.
+
+**Mirror check:** Cards 10 and 11 (encrypt/decrypt formulas) are near-mirrors — knowing one and that d/e swap gives you the other. Cards 9 already covers the public/private key composition. Let me fix this.
+
+**Back scan:** Card 15's back has a comma-clause joining two facts. Needs splitting.
+
+Here's the revised set:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | What type of cryptography is RSA? | Asymmetric (public-key) cryptography | cryptography, rsa |
+| 2 | basic | RSA: How is the modulus n computed? | n = p × q, where p and q are large primes | cryptography, rsa, key-generation |
+| 3 | basic | RSA: How is φ(n) computed from p and q? | φ(n) = (p−1)(q−1) | cryptography, rsa, key-generation |
+| 4 | basic | RSA: What condition must the public exponent e satisfy? | gcd(e, φ(n)) = 1 | cryptography, rsa, key-generation |
+| 5 | basic | RSA: What is the most commonly chosen value for e? | 65537 | cryptography, rsa, key-generation |
+| 6 | basic | RSA: How is the private exponent d derived? | d = modular inverse of e mod φ(n) | cryptography, rsa, key-generation |
+| 7 | cloze | In RSA, the {{c1::public}} key is (n, e) and the {{c2::private}} key is (n, d). | | cryptography, rsa |
+| 8 | cloze | RSA encryption: ciphertext = message^{{c1::e}} mod n. Decryption: message = ciphertext^{{c2::d}} mod n. | | cryptography, rsa, formula |
+| 9 | basic | What hard mathematical problem does RSA's security rely on? | Factoring n into its prime factors | cryptography, rsa, security |
+| 10 | basic | What is the minimum recommended RSA key size? | 2048 bits | cryptography, rsa, security |
+| 11 | basic | Why is RSA rarely used to encrypt data directly? | Too slow for bulk data | cryptography, rsa, application |
+| 12 | basic | In hybrid encryption, what does RSA encrypt? | A symmetric session key | cryptography, rsa, application |
+| 13 | basic | RSA digital signatures: which key signs, which verifies? | Sign with private key, verify with public key | cryptography, rsa, digital-signatures |
+
+**Final checks:**
+- **Mirrors:** Cards 7 & 8 are multi-cloze merges (no mirror pairs). Card 13 tests signatures (distinct from encryption). Good.
+- **Backs:** All under 10 words. No "and" joining distinct facts (card 13's "sign/verify" is the single concept being tested).
+- **Distribution:** ~38% why/how/reasoning (cards 4, 6, 9, 11, 12), ~31% definitions (1, 2, 3), ~23% application (5, 10, 13), ~8% formulas (7, 8). Good.
+- **No padding:** 13 cards from substantive content. Each tests a distinct fact.
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

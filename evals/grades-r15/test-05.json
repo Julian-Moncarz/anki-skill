@@ -1,0 +1,27 @@
+{
+  "overall_pass": false,
+  "score": 62,
+  "violations": [
+    {
+      "rule": "Table must have exactly 5 columns (Step 3 presentation format)",
+      "card": "general",
+      "detail": "Table header has only 4 columns (#, Type, Front/Text, Tags). The 'Back / Extra' column header is missing. Data rows contain 5 pipe-separated values but the header only defines 4, making the table malformed. SKILL.md: 'The table MUST have exactly 5 columns and ONE row per card.'"
+    },
+    {
+      "rule": "Mirror-deducible cards (Mirror scan / Mirror-Card Redundancy Check)",
+      "card": "Cards 5 and 6",
+      "detail": "Card 5 ('How does a CP system behave during a partition?' → 'Refuses some requests to maintain consistency') and Card 6 ('How does an AP system behave during a partition?' → 'Serves potentially stale data to stay available') are a mirror pair. Since CAP partitions force a binary CP-or-AP choice, knowing one behavior trivially reveals the other. SKILL.md explicitly flags 'CP sacrifices availability + AP sacrifices consistency' as a mirror pattern to merge or drop. The agent's self-check acknowledges this concern but incorrectly dismisses it."
+    },
+    {
+      "rule": "Back brevity — no dash-elaboration (Back scan, Step 2.5)",
+      "card": "Card 9",
+      "detail": "Back is: 'The tradeoff only applies during partitions — without a partition, you can have both C and A'. Contains '—' joining two facts: (1) the tradeoff only applies during partitions, (2) without a partition you can have both C and A. SKILL.md: 'Every \"and\", \";\", or \"—\" in a back is a bug. Fix it before presenting.'"
+    },
+    {
+      "rule": "Back brevity — aim for under 10 words (Step 2 Cardinal Rules)",
+      "card": "Card 10",
+      "detail": "Back is: 'If no new writes occur, all replicas converge to the same value over time' (14 words). While the guideline says 'aim for' rather than 'must', 14 words is 40% over the target and could be shortened (e.g., 'All replicas eventually converge if writes stop')."
+    }
+  ],
+  "score": 62
+}

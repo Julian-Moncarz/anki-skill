@@ -1,0 +1,15 @@
+**TCP (Transmission Control Protocol)** establishes a connection before sending data and guarantees reliable, ordered delivery. It retransmits lost packets and uses flow control. Used for HTTP, email, file transfers — anything where data integrity matters.
+
+**UDP (User Datagram Protocol)** is connectionless and "fire-and-forget." No delivery guarantee, no ordering, no retransmission. It's faster and lower overhead. Used for video streaming, DNS lookups, online gaming — where speed matters more than perfection.
+
+| | TCP | UDP |
+|---|---|---|
+| Connection | Connection-oriented (3-way handshake) | Connectionless |
+| Reliability | Guaranteed delivery, retransmits | No guarantee |
+| Ordering | Preserves packet order | No ordering |
+| Speed | Slower (overhead) | Faster |
+| Use cases | Web, email, file transfer | Streaming, DNS, gaming |
+
+The core tradeoff: **TCP trades speed for reliability; UDP trades reliability for speed.**
+
+Would you like me to create Anki cards from this?

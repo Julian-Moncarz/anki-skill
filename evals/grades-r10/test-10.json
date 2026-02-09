@@ -1,0 +1,44 @@
+{
+  "overall_pass": false,
+  "score": 52,
+  "violations": [
+    {
+      "rule": "Mirror-deducible cards",
+      "card": "1, 2, 3",
+      "detail": "All three cards form a mirror-deducible triad. Knowing card 1 ('mitochondria produce ATP') and card 2 ('ATP production via cellular respiration') trivially gives you card 3 ('cellular respiration occurs in mitochondria'). The agent even identified only 2 distinct facts but then manufactured a third card that is deducible from the other two."
+    },
+    {
+      "rule": "Orphan facts / minimum cluster",
+      "card": "general",
+      "detail": "The agent correctly identified that the content only contains 1-2 card-worthy facts, which is below the minimum cluster size of 3. Per the skill rules, if content only has 1-2 card-worthy facts, make 1-2 cards — quality over quantity. Instead the agent padded to 3 cards by creating a mirror-deducible card, violating both the orphan/cluster rule and the mirror rule simultaneously."
+    },
+    {
+      "rule": "Easily derived information",
+      "card": "3",
+      "detail": "Card 3 ('In which organelle does cellular respiration occur?' → 'Mitochondria') is trivially derivable from cards 1 and 2. If mitochondria produce ATP (card 1) through cellular respiration (card 2), then cellular respiration obviously occurs in mitochondria."
+    },
+    {
+      "rule": "Self-check: mirror scan",
+      "card": "general",
+      "detail": "The mandatory self-check requires scanning every pair and asking 'if I know card A, can I immediately answer card B?' The agent did not perform or report this check despite it being marked MANDATORY. Had it been done, the mirror triad would have been caught."
+    },
+    {
+      "rule": "Type distribution",
+      "card": "general",
+      "detail": "All 3 cards are definitional/factual ('what is', 'what process', 'which organelle'). Zero why/how cards. The target is ~40% conceptual/why-how cards. The agent could have made a card like 'Why do mitochondria need to produce ATP?' or flagged that the content is too thin for a good card set."
+    },
+    {
+      "rule": "Flag missing content",
+      "card": "general",
+      "detail": "The agent recognized the content was extremely thin (1-2 facts) but did not flag to the user that important information is missing and offer to supplement. The skill says: 'if you believe something critically important is MISSING from the content, flag it to the user.' With content this thin, the agent should have suggested adding cards about the mechanism of cellular respiration (electron transport chain, etc.) rather than padding with a deducible card."
+    },
+    {
+      "rule": "Scaling",
+      "card": "general",
+      "detail": "The skill says 'If the content only has 1-2 card-worthy facts, make 1-2 cards. Quality over quantity — a single excellent card beats three redundant ones.' The agent acknowledged only 2 facts existed but forced 3 cards anyway to meet the cluster minimum, creating redundancy."
+    }
+  ],
+  "score_breakdown": "Started at 100. -10 for mirror-deducible triad across all cards. -10 for padding to meet cluster minimum instead of making 1-2 honest cards. -8 for easily derived card 3. -5 for skipping mandatory self-check. -8 for 100% definitional cards (0% why/how). -5 for not flagging thin content to user. -2 for scaling violation.",
+  "overall_pass": false,
+  "score": 52
+}

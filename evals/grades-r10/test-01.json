@@ -1,0 +1,26 @@
+{
+  "overall_pass": false,
+  "score": 82,
+  "violations": [
+    {
+      "rule": "Back brevity / no 'and' joining two facts",
+      "card": "6",
+      "detail": "Back is \"Faster per update, and the noise helps escape shallow local minima\" — two distinct facts joined by 'and'. Should be split into two cards: one for speed advantage, one for noise benefit."
+    },
+    {
+      "rule": "Mirror-deducible / sacrifice-gain pair",
+      "card": "3 & 4",
+      "detail": "Cards 3 and 4 form a sacrifice/gain mirror pair. Learning rate has two extremes with two failure modes; knowing 'too large → overshoots/diverges' strongly hints 'too small → slow convergence' (and vice versa), since these are the only two obvious failure modes of a scalar hyperparameter. The self-check claimed the failure modes are different enough, but the SKILL.md requires merging or dropping when knowing one substantially narrows the other. Should merge into a single multi-cloze or keep only the less obvious one."
+    },
+    {
+      "rule": "Type distribution target (~40% why/how)",
+      "card": "general",
+      "detail": "The self-check claims ~3 definitional, ~3 why/how, ~2 what-happens-if, but cards 3, 4 are 'what happens if' (application), cards 6, 7 are why/how reasoning, card 8 is reasoning, cards 1, 2, 5 are definitional/factual. That gives 3/8 = 37.5% definitional, which is within range, so this is borderline acceptable. Minor concern only."
+    }
+  ],
+  "score_breakdown": {
+    "card_quality": "Generally strong — atomic fronts, mostly brief backs, good context, no yes/no questions, no example-asking, proper cloze usage",
+    "card_selection": "Good topic coverage, no trivia/orphans/label-only cards, content-based, meets minimum cluster size",
+    "deductions": "-10 for card 6 back brevity violation (clear 'and' joining two facts), -8 for cards 3&4 mirror-deducible pair"
+  }
+}

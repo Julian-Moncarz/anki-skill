@@ -1,0 +1,27 @@
+Looking at each card carefully against the rules:
+
+**Card 4 back check:** "Stack variables are tied to their function's scope and are popped on return; heap variables persist until explicitly freed" — this contains a semicolon joining two independent facts, violating the atomicity/back brevity rule.
+
+**Card 5 cloze check:** "A memory leak occurs when {{c1::heap}} memory is allocated but never {{c2::freed}}." — c1 ("heap") is arguably guessable since memory leaks are almost always discussed in the context of heap memory, and c2 ("freed") is directly guessable from "allocated but never ___" — the antonym pattern makes it trivial.
+
+**Card 6 back check:** "Their size is unknown at compile time, so they need runtime allocation with flexible sizing" — contains "so" joining a reason and a consequence (two facts). Also arguably two ideas: unknown size at compile time AND needing flexible sizing.
+
+**Card 8 cloze check:** "Stack variables have {{c1::deterministic}} lifetimes because they are tied to their enclosing scope." — the word "because they are tied to their enclosing scope" strongly hints at "deterministic." If they're tied to a scope, the lifetime is by definition predictable/deterministic. The surrounding context gives away the answer.
+
+**Mirror check — Cards 4 and 9:** Card 9 asks "What happens to stack variables when a function returns?" → "popped off the stack." Card 4's back literally states "Stack variables are tied to their function's scope and are popped on return" — the same fact appears as part of card 4's answer and as card 9's entire answer. This is a mirror/redundancy violation.
+
+**Card 4 and 8 overlap:** Card 4 explains stack variables are "tied to their function's scope" and card 8 says stack variables have "deterministic lifetimes because they are tied to their enclosing scope" — very similar underlying fact.
+
+```json
+{
+  "overall_pass": false,
+  "score": 62,
+  "violations": [
+    {"rule": "Atomic / back brevity (no semicolons joining two facts)", "card": "4", "detail": "Back contains a semicolon joining two independent facts: stack lifetime AND heap lifetime. Should be split into separate cards."},
+    {"rule": "Cloze difficulty check (not guessable from context)", "card": "5", "detail": "c2 'freed' is trivially guessable from 'allocated but never ___' — the antonym pattern gives it away. c1 'heap' is also strongly implied since memory leaks are a heap concept."},
+    {"rule": "Atomic / back brevity (no 'so' joining two facts)", "card": "6", "detail": "Back contains 'so' joining two facts: size unknown at compile time AND needing runtime allocation with flexible sizing. Should be split or trimmed."},
+    {"rule": "Cloze difficulty check (not guessable from context)", "card": "8", "detail": "'deterministic' is guessable from 'tied to their enclosing scope' — if lifetimes are tied to a scope, that is by definition deterministic. The surrounding context gives away the answer."},
+    {"rule": "Mirror-deducible / no repeated facts", "card": "4 and 9", "detail": "Card 4's back literally states 'are popped on return' which is the entire answer to card 9. Knowing card 4 trivially gives you card 9."},
+    {"rule": "Mirror-deducible / no repeated facts", "card": "4 and 8", "detail": "Card 4 says stack variables are 'tied to their function's scope' and card 8 says they have deterministic lifetimes 'because they are tied to their enclosing scope' — substantially the same underlying fact about scope-bound lifetimes."}
+  ]
+}

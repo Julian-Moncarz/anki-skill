@@ -1,0 +1,18 @@
+Now I understand what's going on. This isn't a Python debugging request — **test-06 in your `prompts.csv` is a negative control test** that intentionally uses a non-card-making prompt ("Help me debug this Python error...") to verify the skill does NOT trigger.
+
+You pasted the contents of `prompts.csv` with the message from test-06 as your prompt. Let me clarify what you probably want help with:
+
+**If you want to run the eval suite**, use:
+
+```bash
+bash /Users/julianmoncarz/Skills/anki-card-maker/evals/run_evals.sh
+```
+
+**If you actually want to debug a `TypeError: 'NoneType' object is not iterable`**, I'd need to see the actual Python code and traceback. This error means you're trying to iterate (e.g., `for x in something`) over a value that is `None` — typically because a function returned `None` instead of a list/tuple/iterable.
+
+Common causes:
+- A function that doesn't explicitly `return` (defaults to `None`)
+- A method like `list.sort()` or `list.append()` which returns `None` (mutates in-place)
+- A missing return value from an API/database call
+
+What were you actually trying to do?

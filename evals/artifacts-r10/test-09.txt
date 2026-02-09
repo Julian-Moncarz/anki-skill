@@ -1,0 +1,30 @@
+
+
+I'll generate flashcards from your RSA notes. Let me work through the card selection and self-check process.
+
+**Content analysis:** Your notes cover RSA key generation, encryption/decryption mechanics, security basis, hybrid encryption rationale, and digital signatures. Good density — I'll aim for ~10-12 cards.
+
+**Self-check pass:**
+
+- **Mirror scan:** Encrypt/decrypt are a mirror pair → merge into one multi-cloze. Sign/verify are a mirror pair → merge into one multi-cloze. Public key (n,e) / private key (n,d) share n → make cards about what distinguishes them, not list both.
+- **Back scan:** All backs under 10 words, no dash-elaboration.
+- **Distribution:** ~4 definitional, ~4 why/how/reasoning, ~2 application/process, ~1 misconception = good mix.
+
+Here are the cards:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | RSA: What type of cryptography does it use? | Asymmetric (public-key) cryptography | cryptography, rsa |
+| 2 | basic | RSA key generation: What is the modulus n computed from? | The product of two large primes p × q | cryptography, rsa, key-generation |
+| 3 | basic | RSA key generation: What function is used to compute (p−1)(q−1)? | Euler's totient function φ(n) | cryptography, rsa, key-generation |
+| 4 | basic | RSA key generation: What condition must the public exponent e satisfy with φ(n)? | gcd(e, φ(n)) = 1 | cryptography, rsa, key-generation |
+| 5 | basic | RSA key generation: How is the private exponent d derived from e? | Modular inverse of e mod φ(n) | cryptography, rsa, key-generation |
+| 6 | basic | RSA: What distinguishes the public key (n, e) from the private key (n, d)? | The exponent: e (public) vs d (private) | cryptography, rsa |
+| 7 | cloze | RSA encryption: ciphertext = message^{{c1::e}} mod n; decryption: message = ciphertext^{{c2::d}} mod n | | cryptography, rsa, process |
+| 8 | basic | RSA: What computational problem makes RSA secure? | Factoring n back into its prime factors p and q | cryptography, rsa, security |
+| 9 | basic | RSA: What is the minimum recommended key size for security? | 2048 bits | cryptography, rsa, security |
+| 10 | basic | RSA: Why is it rarely used to encrypt data directly? | It's too slow for bulk data | cryptography, rsa, reasoning |
+| 11 | basic | RSA: In hybrid encryption, what does RSA encrypt instead of the data itself? | A symmetric session key | cryptography, rsa, hybrid-encryption |
+| 12 | cloze | RSA digital signatures: sign with the {{c1::private}} key, verify with the {{c2::public}} key | | cryptography, rsa, digital-signatures |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

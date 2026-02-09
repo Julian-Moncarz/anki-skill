@@ -44,7 +44,7 @@ Not everything is worth a card. This is the hardest part — most bad decks fail
 - **Acronym expansions:** what letters stand for. Card the FUNCTION, not the name. Bad: "What does SYN stand for?" Good: "What is the purpose of the SYN packet in TCP?"
 - **Specific constant values** without understanding why they matter
 - **Label-only cards:** naming things without testing what they DO. Bad: "What is the name of the Cas9 recognition sequence?" Good: "What role does the PAM sequence play in CRISPR?"
-- **Orphan facts:** a single isolated card with no related cards. Minimum cluster size: 3 cards per topic.
+- **Orphan facts:** a single isolated card with no related cards. Prefer clusters of 2+ related cards, but never pad with redundant cards to hit a number.
 - **Mirror-deducible cards:** if knowing card A trivially gives you card B, drop one or merge into multi-cloze. E.g., "public key encrypts" + "private key decrypts" — keep one or merge.
 - **Easily derived information:** if it follows logically from another card you already made, skip it.
 
@@ -268,4 +268,4 @@ If AnkiConnect is not running, tell the user to open Anki and ensure the AnkiCon
 - [ ] **Mirror check:** No two cards where knowing one trivially gives you the other. Read each pair and ask "if I know card A, can I immediately answer card B?" If yes → merge or drop.
 - [ ] **No repeated facts:** Every card tests a genuinely different piece of knowledge. If two cards test the same fact in different words, drop one.
 - [ ] **Type distribution:** Count your cards by category. At least ~40% should be "why/how/reasoning" cards — not just "what is X?" definitions. If your set is mostly definitional, add more causal, application, and misconception cards before presenting.
-- [ ] **Minimum cluster:** At least 3 cards, and they must cover different aspects of the topic.
+- [ ] **No padding:** Every card tests a genuinely different fact. If content only supports 2 cards, make 2. Never add a third card by rephrasing. Flag thin content to the user instead.

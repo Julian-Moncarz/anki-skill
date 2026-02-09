@@ -1,0 +1,38 @@
+
+
+Looking at the CAP theorem content you shared, let me identify what's card-worthy and generate high-quality cards.
+
+**Card-worthy concepts identified:**
+1. What CAP theorem actually states (core principle)
+2. What each property means (C, A, P) — but functional, not label-only
+3. The practical implication (partitions are inevitable → real tradeoff is C vs A)
+4. CP vs AP system behavior during partitions
+5. The common misconception (permanent choice vs. partition-time tradeoff)
+6. Eventual consistency in AP systems
+7. Concrete system classifications (Cassandra, HBase, etc.)
+
+**Self-check notes:**
+- CP/AP sacrifice cards are mirror-deducible → merge into cloze
+- "What does C/A/P stand for" → skip acronym expansion, card the function instead
+- Distribution: aiming for ~40% why/how, ~30% definitions, ~20% application, ~10% misconception
+
+Here are the cards:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | CAP theorem: What tradeoff does a distributed data store face? | It can guarantee at most two of: Consistency, Availability, Partition Tolerance | distributed-systems, cap-theorem, principle |
+| 2 | basic | CAP theorem: What does Consistency guarantee? | Every read receives the most recent write | distributed-systems, cap-theorem, definition |
+| 3 | basic | CAP theorem: What does Availability guarantee? | Every request receives a non-error response | distributed-systems, cap-theorem, definition |
+| 4 | basic | CAP theorem: Why is the real-world choice between C and A, not all three? | Network partitions are inevitable, so Partition Tolerance can't be sacrificed | distributed-systems, cap-theorem, reasoning |
+| 5 | cloze | During a network partition, a CP system sacrifices {{c1::availability}} while an AP system sacrifices {{c2::consistency}}. | | distributed-systems, cap-theorem, tradeoff |
+| 6 | basic | CAP theorem: How does a CP system behave during a partition? | It refuses some requests to maintain consistency | distributed-systems, cap-theorem, reasoning |
+| 7 | basic | CAP theorem: How does an AP system behave during a partition? | It serves potentially stale data to remain available | distributed-systems, cap-theorem, reasoning |
+| 8 | basic | CAP theorem: What is the common misconception about the C/A/P tradeoff? | That you permanently pick 2 of 3 — the tradeoff only applies during partitions | distributed-systems, cap-theorem, misconception |
+| 9 | basic | CAP theorem: When there is no network partition, what can a system provide? | Both consistency and availability | distributed-systems, cap-theorem, reasoning |
+| 10 | cloze | Cassandra and DynamoDB are classified as {{c1::AP}} systems in the CAP theorem. | | distributed-systems, cap-theorem, application |
+| 11 | cloze | HBase and MongoDB (with majority writes) are classified as {{c1::CP}} systems in the CAP theorem. | | distributed-systems, cap-theorem, application |
+| 12 | basic | CAP theorem: What does eventual consistency mean in AP systems? | If no new writes occur, all replicas converge to the same value over time | distributed-systems, cap-theorem, definition |
+
+**Distribution check:** 4 why/how reasoning (33%), 3 definitions (25%), 3 application (25%), 1 misconception (8%), 1 principle (8%) — good balance.
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

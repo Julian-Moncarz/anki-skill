@@ -93,13 +93,28 @@ for artifact in "$ARTIFACTS_DIR"/test-*.txt; do
     if grade=$(claude -p "${GRADER_PROMPT}
 ${cards_content}
 === END OUTPUT ===" 2>/dev/null); then
-        # Strip markdown fences if present
+        # Extract JSON from response (handles markdown fences, preamble text, etc.)
         clean_grade=$(echo "$grade" | python3 -c "
 import sys, re, json
 text = sys.stdin.read().strip()
-text = re.sub(r'^\`\`\`json\s*', '', text)
-text = re.sub(r'\`\`\`\s*$', '', text.strip())
-print(text)
+# Try to find JSON object in the text
+match = re.search(r'\{[\s\S]*\}', text)
+if match:
+    candidate = match.group(0)
+    try:
+        json.loads(candidate)
+        print(candidate)
+    except json.JSONDecodeError:
+        # Try to find the last complete JSON object
+        for m in re.finditer(r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', text):
+            try:
+                json.loads(m.group(0))
+                candidate = m.group(0)
+            except json.JSONDecodeError:
+                pass
+        print(candidate)
+else:
+    print(text)
 " 2>/dev/null || echo "$grade")
 
         echo "$clean_grade" > "$grade_file"

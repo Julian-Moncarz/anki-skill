@@ -1,0 +1,32 @@
+
+
+I'll create spaced repetition cards from this CRISPR passage. Let me work through the content carefully.
+
+**Card-worthy content identified:**
+- Natural bacterial immune mechanism (origin/why it exists)
+- How spacers work in nature (mechanism)
+- Role of gRNA in directing Cas9
+- What Cas9 does (double-strand break)
+- Synthetic gRNA design (~20 nt complementary)
+- NHEJ repair pathway and its consequence
+- HDR repair pathway and its requirement
+- PAM sequence constraint and its function
+- Why NHEJ disrupts genes (error-prone nature)
+
+**Self-check completed:** Mirror scan (NHEJ/HDR are not mirror-deducible — they test different mechanisms, not two sides of one coin), back brevity scan, cloze guessability scan, distribution check (~44% why/how, ~33% mechanism, ~22% application/constraint).
+
+Here are the cards:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | CRISPR: What biological system was CRISPR-Cas9 adapted from? | Bacterial immune defense against viruses | biology, crispr, genetics |
+| 2 | basic | CRISPR: How do bacteria "remember" a virus they've encountered before? | They store fragments of viral DNA as spacers in CRISPR arrays | biology, crispr, genetics |
+| 3 | basic | CRISPR: What role does guide RNA (gRNA) play in the Cas9 system? | It directs Cas9 to the matching target DNA sequence | biology, crispr, genetics |
+| 4 | basic | CRISPR: What does Cas9 do when it reaches its target site? | Creates a double-strand break in the DNA | biology, crispr, genetics |
+| 5 | cloze | For genome editing, scientists design a synthetic gRNA of ~{{c1::20}} nucleotides, complementary to the target gene. | | biology, crispr, genetics |
+| 6 | basic | CRISPR: Why does NHEJ (non-homologous end joining) often disrupt the target gene? | It is error-prone — it joins broken ends imprecisely | biology, crispr, genetics |
+| 7 | basic | CRISPR: What is required for HDR (homology-directed repair) to insert a new sequence at a cut site? | A donor DNA template must be provided | biology, crispr, genetics |
+| 8 | basic | CRISPR: What role does the PAM sequence play in Cas9 targeting? | It is a required recognition site adjacent to the target — Cas9 cannot cut without it | biology, crispr, genetics |
+| 9 | cloze | The PAM sequence for *S. pyogenes* Cas9 is {{c1::NGG}}. | | biology, crispr, genetics |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

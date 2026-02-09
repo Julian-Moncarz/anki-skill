@@ -1,0 +1,17 @@
+
+
+Here are the flashcards I made from the TCP connection content:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | TCP: What is the purpose of the three-way handshake? | To ensure both sides agree on sequence numbers before data transfer | networking, tcp, handshake |
+| 2 | basic | TCP: What does the client send in the first step of connection establishment? | A SYN packet with an initial sequence number | networking, tcp, handshake |
+| 3 | basic | TCP: What does the server send in response to the client's SYN? | A SYN-ACK packet | networking, tcp, handshake |
+| 4 | basic | TCP: What is the final step of the three-way handshake? | The client sends an ACK confirming the server's sequence number | networking, tcp, handshake |
+| 5 | basic | TCP: Why are sequence numbers needed during data transfer? | To reassemble packets in order and detect missing segments | networking, tcp, process |
+| 6 | basic | TCP: What happens if the handshake fails at any point? | The connection attempt times out | networking, tcp, process |
+| 7 | basic | TCP: What retry strategy is used after a failed connection attempt? | Exponential backoff | networking, tcp, process |
+| 8 | basic | TCP: How many steps does closing a connection require? | Four (a four-way handshake) | networking, tcp, process |
+| 9 | cloze | TCP connection teardown uses {{c1::FIN}} and ACK packets. | | networking, tcp, process |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

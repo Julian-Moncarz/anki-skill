@@ -1,0 +1,31 @@
+{
+  "overall_pass": false,
+  "score": 72,
+  "violations": [
+    {
+      "rule": "Back brevity / no dash-elaboration",
+      "card": "8",
+      "detail": "Back contains a dash joining two facts: 'It marks where Cas9 can bind — Cas9 cannot cut without an adjacent PAM'. The dash adds a second fact. Should be split into two cards or trimmed to one fact."
+    },
+    {
+      "rule": "Back brevity / no comma-participle",
+      "card": "6",
+      "detail": "Back says 'It is error-prone, often introducing insertions or deletions' — the comma + participle adds a consequence as a second fact. Should be split or trimmed."
+    },
+    {
+      "rule": "Mirror-deducible cards",
+      "card": "6 and 7",
+      "detail": "Cards 6 (NHEJ for knockout) and 7 (HDR for insertion) form a mirror pair — if only two repair pathways are presented and you know one does knockout, the other must do insertion. Should merge into a multi-cloze or drop one."
+    },
+    {
+      "rule": "Type distribution (~40% why/how)",
+      "card": "general",
+      "detail": "Most cards are definitional/factual (what is X, what does X do). Only card 6 and arguably card 10 are why/how/application cards. That's ~20% rather than the ~40% target. Several factual cards could be reframed as why/how cards."
+    },
+    {
+      "rule": "Specific constant value without understanding why",
+      "card": "5",
+      "detail": "Card 5 asks for the length of guide RNA (~20 nucleotides) — this is a specific constant value. A better card would ask WHY ~20 nucleotides is the right length (specificity vs. off-target effects) or what happens if it's too short/long."
+    }
+  ]
+}

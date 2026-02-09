@@ -1,0 +1,18 @@
+
+
+Here are the cards I've generated from the CRISPR passage:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | CRISPR: What natural system was the CRISPR-Cas9 editing tool adapted from? | Bacterial immune defense against viruses | biology, crispr, genetics |
+| 2 | basic | CRISPR: How do bacteria store fragments of viral DNA for future defense? | As spacers in CRISPR arrays | biology, crispr, genetics |
+| 3 | basic | CRISPR: What role does guide RNA (gRNA) play in the Cas9 system? | Directs Cas9 to the matching target DNA sequence | biology, crispr, genetics |
+| 4 | basic | CRISPR: What type of DNA damage does Cas9 create at its target site? | A double-strand break | biology, crispr, genetics |
+| 5 | basic | CRISPR: How long is the synthetic guide RNA used in genome editing? | ~20 nucleotides | biology, crispr, genetics |
+| 6 | basic | CRISPR: Why is NHEJ often used to disrupt (knock out) a gene? | It is error-prone, often introducing insertions or deletions | biology, crispr, genetics |
+| 7 | basic | CRISPR: What is required for HDR to insert a new sequence at the break site? | A donor template | biology, crispr, genetics |
+| 8 | basic | CRISPR: What role does the PAM sequence play in CRISPR-Cas9? | It marks where Cas9 can bind — Cas9 cannot cut without an adjacent PAM | biology, crispr, genetics |
+| 9 | cloze | The PAM sequence for *S. pyogenes* Cas9 is {{c1::NGG}}. | | biology, crispr, genetics |
+| 10 | basic | CRISPR gene editing: If you want to disable a gene without inserting new DNA, which repair pathway would you rely on? | NHEJ (non-homologous end joining) | biology, crispr, genetics, application |
+
+These look good? I'll push them to Anki. Edit any you'd like to change.

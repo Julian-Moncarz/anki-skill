@@ -1,0 +1,15 @@
+
+
+```python
+def reverse_linked_list(head):
+    prev = None
+    curr = head
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+    return prev
+```
+
+This iterates through the list, reversing each node's `next` pointer to point to the previous node instead. Three pointers track the previous, current, and next nodes. Returns `prev` as the new head.

@@ -90,7 +90,7 @@ Good: "Mitochondria generate ATP via the {{c1::electron transport chain}} in the
 
 The front must ask one thing. The back must be the SHORTEST correct answer — ideally 1-8 words. Resist the urge to explain or add context in the back. If you want to add context, that's a separate card.
 
-**Back brevity test:** The back should be as short as possible — aim for under 10 words. If the back has "and" joining two distinct facts, a dash followed by elaboration, or more than one sentence — it needs splitting or trimming.
+**Back brevity test (MOST COMMONLY VIOLATED RULE):** The back should be as short as possible — aim for under 10 words. If the back has "and" joining two distinct facts, a dash followed by elaboration, or more than one sentence — it MUST be split. This is the #1 source of violations. Before presenting, literally search every back for the word "and" — if you find it, split the card.
 
 Parenthetical abbreviations are OK: "Non-homologous end joining (NHEJ)", "Guide RNA (gRNA)", "Eric Brewer (2000)" — these are standard notation, not extra facts. But parentheticals that add a NEW fact are not OK: "ATP production (cellular energy generation)" adds a restatement that should be a separate card or removed.
 

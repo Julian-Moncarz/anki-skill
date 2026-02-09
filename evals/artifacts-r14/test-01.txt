@@ -1,0 +1,38 @@
+I'll create Anki cards from the gradient descent content. Let me work through the card creation process.
+
+**Identifying card-worthy facts from the content:**
+1. What gradient descent does (optimization to minimize cost function)
+2. How it works mechanically (opposite direction of gradient)
+3. The update rule formula
+4. Learning rate too large → overshoot/diverge
+5. Learning rate too small → slow convergence
+6. Batch vs SGD vs mini-batch distinction
+7. Why SGD is preferred over batch
+8. Convexity requirement for global minimum
+9. What traps gradient descent in non-convex functions
+
+**Self-checks:**
+- **Mirror scan:** Cards 4 & 5 (learning rate too large/too small) could be mirror-deducible if both are "what happens when α is X." I'll keep both because the failure modes are qualitatively different (divergence vs. slowness aren't opposites).
+- Batch/SGD/mini-batch is a variant triad — I'll collapse to test the interesting distinction rather than enumerate all three.
+- **Back scan:** Checking all backs for "and", "—", ";". Splitting where needed.
+- **Distribution:** 3 definitional, 4 why/how/reasoning, 2 application/what-happens-if — good mix.
+
+Here are the cards:
+
+| # | Type | Front / Text | Back / Extra | Tags |
+|---|------|-------------|-------------|------|
+| 1 | basic | Gradient descent: Why does the algorithm update parameters in the OPPOSITE direction of the gradient? | The gradient points toward steepest ascent, so the negative direction minimizes the function | machine-learning, gradient-descent, reasoning |
+| 2 | cloze | The gradient descent update rule is: θ = θ − {{c1::α}} · ∇J(θ), where {{c1}} is the learning rate | | machine-learning, gradient-descent, formula |
+| 3 | basic | Gradient descent: What happens if the learning rate is too large? | The algorithm overshoots and may diverge | machine-learning, gradient-descent, reasoning |
+| 4 | basic | Gradient descent: What happens if the learning rate is too small? | Convergence becomes painfully slow | machine-learning, gradient-descent, reasoning |
+| 5 | basic | Why is SGD often preferred over batch gradient descent in practice? | Faster per update | machine-learning, gradient-descent, sgd, reasoning |
+| 6 | basic | How can the noise in SGD be beneficial for optimization? | It helps escape shallow local minima | machine-learning, gradient-descent, sgd, reasoning |
+| 7 | basic | Gradient descent: What property must the cost function have for gradient descent to guarantee finding the global minimum? | Convexity | machine-learning, gradient-descent, reasoning |
+| 8 | cloze | On non-convex cost functions, gradient descent can get stuck in local minima or {{c1::saddle points}} | | machine-learning, gradient-descent |
+| 9 | basic | Stochastic gradient descent computes the gradient using {{c1::one random training example}} per update, unlike batch gradient descent which uses the entire dataset | | machine-learning, gradient-descent, sgd |
+
+Wait — card 9 has a cloze marker but is labeled basic. Let me fix that, and also check: card 9's back context doesn't give away the answer since "stochastic" already suggests randomness... but the cloze tests the specific quantity (one example), which isn't deducible from "stochastic" alone. Good.
+
+Let me also verify no mirrors: 5 (faster) and 6 (escapes minima) test different benefits — not deducible from each other. Good.
+
+These look good? I'll push them to Anki once you approve. Edit any you'd like to change.

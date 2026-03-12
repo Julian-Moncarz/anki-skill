@@ -1,9 +1,0 @@
-{
-  "overall_pass": false,
-  "score": 62,
-  "violations": [
-    {"rule": "Table must have exactly 5 columns with separate Front/Text and Back/Extra columns", "card": "general", "detail": "The table has 4 columns instead of 5. The Back/Extra column is missing as a separate column — back content appears merged with Front or is placed where Tags should be, making the table malformed."},
-    {"rule": "Mirror-deducible cards must be merged or dropped", "card": "5 & 6", "detail": "Cards 5 (CP refuses requests) and 6 (AP serves stale data) are a classic sacrifice/gain mirror pair explicitly called out in SKILL.md: 'CP sacrifices availability + AP sacrifices consistency — these are the same fact from two angles. Keep ONE card.' The agent's self-check acknowledged the concern but incorrectly dismissed it."},
-    {"rule": "Back scan: no dash-elaboration (every dash in a back is a bug)", "card": "9", "detail": "Back reads 'That you permanently pick 2 of 3 — the tradeoff only applies during partitions.' The dash joins two distinct facts: (1) the misconception itself and (2) the correction. Must be split into separate cards or trimmed."}
-  ]
-}

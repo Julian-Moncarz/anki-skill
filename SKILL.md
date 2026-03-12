@@ -240,7 +240,7 @@ Wait for explicit approval before pushing.
 After approval, write the cards as JSON and run the push script:
 
 ```bash
-python /Users/julianmoncarz/Skills/anki-card-maker/scripts/push_to_anki.py cards.json --deck "Default"
+python ./scripts/push_to_anki.py cards.json --deck "Default"
 ```
 
 JSON format:
